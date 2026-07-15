@@ -1,0 +1,38 @@
+/* =========================================================
+   Footer Styling
+   ========================================================= */
+
+
+/* Contact link in the fourth footer column */
+.site-footer .footer-widget-4 .wp-block-paragraph a,
+.site-footer .footer-widget-4 .wp-block-paragraph a:visited {
+    text-decoration: none !important;
+}
+
+.site-footer .footer-widget-4 .wp-block-paragraph a:hover,
+.site-footer .footer-widget-4 .wp-block-paragraph a:focus {
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+    .site-footer .footer-widget-1 .widget-title,
+    .site-footer .footer-widget-2 .widget-title,
+    .site-footer .footer-widget-3 .widget-title {
+        display: none;
+    }
+
+    .site-footer .footer-widget-1,
+    .site-footer .footer-widget-2,
+    .site-footer .footer-widget-3 {
+        margin-bottom: 18px !important;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--shs-color-dark-border);
+    }
+	
+	    /* Remove Max Mega Menu's 6px inset from footer menu titles */
+    .site-footer .mega-menu-toggle .mega-toggle-blocks-left {
+        padding-left: 0 !important;
+    }
+}
+
+

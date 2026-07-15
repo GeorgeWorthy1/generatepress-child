@@ -1,0 +1,1178 @@
+/* =========================================================
+   WooCommerce Global
+   ========================================================= */
+
+.woocommerce span.onsale,
+.woocommerce ul.products li.product .onsale,
+.woocommerce div.product span.onsale {
+    background: var(--shs-colour-sale) !important;
+    color: var(--shs-colour-white) !important;
+
+    min-width: auto !important;
+    min-height: auto !important;
+
+    padding: 6px 10px !important;
+    border-radius: var(--shs-radius-pill) !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   Shared Page Hero
+   Used by pages, product archives, category archives, tag archives,
+   author archives and blog archives
+   ========================================================= */
+
+.shs-page-hero {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.shs-page-hero-cover {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 280px;
+
+    overflow: hidden;
+    text-align: center;
+}
+
+.shs-page-hero-cover .wp-block-cover__image-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.shs-page-hero-cover .wp-block-cover__inner-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: var(--shs-container-content);
+    padding: 72px var(--shs-page-padding-tablet);
+
+    text-align: center;
+}
+
+.shs-page-hero-cover h1 {
+    margin: 0 0 12px;
+
+    color: var(--shs-colour-white);
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.shs-page-hero-cover a {
+    text-decoration: none;
+}
+
+.shs-page-hero-cover a:hover {
+    color: var(--shs-colour-primary-light);
+}
+
+
+/* =========================================================
+   Archive Hero Content
+   Only archive-specific text inside the shared hero
+   ========================================================= */
+
+.archive.separate-containers .site-main {
+    margin-top: 0 !important;
+}
+
+.shs-product-archive-description {
+    max-width: 760px;
+    margin: 0 auto;
+
+    color: var(--shs-colour-white);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.shs-product-archive-description p {
+    margin: 0;
+}
+
+.shs-product-archive-breadcrumbs,
+.shs-product-archive-breadcrumbs span {
+    color: var(--shs-colour-white);
+}
+
+.shs-product-archive-breadcrumbs a {
+    color: var(--shs-colour-primary);
+    text-decoration: none;
+}
+
+.shs-product-archive-breadcrumbs a:hover {
+    color: var(--shs-colour-primary-light);
+}
+
+
+/* =========================================================
+   Table of Contents
+   ========================================================= */
+
+#ez-toc-container a:hover,
+#ez-toc-container a:visited:hover {
+    color: var(--shs-colour-primary-dark) !important;
+}
+
+#ez-toc-container .ez-toc-title {
+    color: var(--shs-colour-heading);
+}
+
+
+/* =========================================================
+   Shared Archive Pagination
+   Used by product, category, tag, author and blog archives
+   ========================================================= */
+
+.archive .shs-simple-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.archive .shs-simple-pagination .shs-page-prev,
+.archive .shs-simple-pagination .shs-page-next,
+.archive .shs-simple-pagination .shs-page-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 0 16px;
+
+    border: 1px solid var(--shs-colour-border-soft);
+    border-radius: var(--shs-radius-lg);
+
+    background: var(--shs-colour-white);
+    color: var(--shs-colour-heading);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.archive .shs-simple-pagination .shs-page-prev,
+.archive .shs-simple-pagination .shs-page-next {
+    color: var(--shs-colour-primary-dark);
+}
+
+.archive .shs-simple-pagination .shs-page-prev:hover,
+.archive .shs-simple-pagination .shs-page-next:hover {
+    border-color: var(--shs-colour-primary);
+    background: var(--shs-colour-primary-soft);
+    color: var(--shs-colour-dark-brand);
+}
+
+.archive .shs-simple-pagination .shs-page-count {
+    min-width: 108px;
+
+    background: var(--shs-colour-surface-soft);
+    color: var(--shs-colour-muted);
+
+    font-weight: 500;
+}
+
+.archive .shs-simple-pagination .shs-page-disabled {
+    border-color: var(--shs-colour-border-soft);
+
+    background: var(--shs-colour-disabled-bg);
+    color: var(--shs-colour-disabled-text);
+
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.archive .shs-simple-pagination .shs-page-disabled:hover {
+    border-color: var(--shs-colour-border-light);
+
+    background: var(--shs-colour-surface-light);
+    color: var(--shs-colour-disabled-text-hover);
+
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   Shared archive hero / pagination mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .archive .shs-simple-pagination {
+        gap: 8px;
+        margin-top: 32px;
+    }
+
+    .archive .shs-simple-pagination .shs-page-prev,
+    .archive .shs-simple-pagination .shs-page-next,
+    .archive .shs-simple-pagination .shs-page-count {
+        min-height: 38px;
+        padding: 0 12px;
+
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .archive .shs-product-archive-hero-cover {
+        min-height: 220px;
+    }
+
+    .archive .shs-product-archive-hero-cover .wp-block-cover__inner-container {
+        padding: 48px 18px;
+    }
+}
+
+/* ---------------------------------------------------------
+   4. Archive container
+   --------------------------------------------------------- */
+
+.archive .shs-product-archive-container {
+    width: 100%;
+    max-width: var(--shs-container-wide);
+
+    margin: 0 auto;
+    padding: 0 var(--shs-page-padding-desktop) 72px;
+
+    box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   Buttons
+   SmartHomeShopUK standard button styles
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Primary button
+   Used for main actions:
+   - Send Message
+   - Send Enquiry
+   - Add to Basket
+   - Request a Quote
+   - Checkout
+   --------------------------------------------------------- */
+
+a.shs-button-primary,
+button.shs-button-primary,
+input[type="submit"].shs-button-primary,
+.shs-button-primary .gb-button,
+.shs-button-primary .wp-block-button__link,
+div.wpforms-container button.wpforms-submit,
+div.wpforms-container button[type="submit"],
+div.wpforms-container input[type="submit"] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 40px;
+	padding: 0 18px;
+
+	border: 1px solid var(--shs-colour-primary-dark);
+	border-radius: var(--shs-radius-lg);
+
+	background: var(--shs-colour-primary-dark);
+	color: var(--shs-colour-white);
+
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+
+	text-decoration: none !important;
+	cursor: pointer;
+
+	box-sizing: border-box;
+
+	transition:
+		background-color 0.18s ease,
+		border-color 0.18s ease,
+		color 0.18s ease,
+		box-shadow 0.18s ease,
+		transform 0.18s ease;
+}
+
+
+/* WPForms can inject its own generated styles after the theme.
+   These rules ensure its submit buttons remain aligned with
+   the shared SHS primary button styling. */
+
+div.wpforms-container button.wpforms-submit,
+div.wpforms-container button[type="submit"],
+div.wpforms-container input[type="submit"] {
+	background: var(--shs-colour-primary-dark) !important;
+	border-color: var(--shs-colour-primary-dark) !important;
+	border-radius: var(--shs-radius-lg) !important;
+	color: var(--shs-colour-white) !important;
+	font-family: inherit !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+}
+
+
+a.shs-button-primary:hover,
+button.shs-button-primary:hover,
+input[type="submit"].shs-button-primary:hover,
+.shs-button-primary .gb-button:hover,
+.shs-button-primary .wp-block-button__link:hover,
+div.wpforms-container button.wpforms-submit:hover,
+div.wpforms-container button[type="submit"]:hover,
+div.wpforms-container input[type="submit"]:hover {
+	border-color: var(--shs-colour-primary);
+	background: var(--shs-colour-primary);
+	color: var(--shs-colour-white);
+
+	text-decoration: none !important;
+}
+
+div.wpforms-container button.wpforms-submit:hover,
+div.wpforms-container button[type="submit"]:hover,
+div.wpforms-container input[type="submit"]:hover {
+	background: var(--shs-colour-primary) !important;
+	border-color: var(--shs-colour-primary) !important;
+	color: var(--shs-colour-white) !important;
+}
+
+
+a.shs-button-primary:focus-visible,
+button.shs-button-primary:focus-visible,
+input[type="submit"].shs-button-primary:focus-visible,
+.shs-button-primary .gb-button:focus-visible,
+.shs-button-primary .wp-block-button__link:focus-visible,
+div.wpforms-container button.wpforms-submit:focus-visible,
+div.wpforms-container button[type="submit"]:focus-visible,
+div.wpforms-container input[type="submit"]:focus-visible {
+	outline: 3px solid rgba(38, 180, 188, 0.32);
+	outline-offset: 3px;
+}
+
+
+/* WPForms disabled / sending state */
+
+div.wpforms-container button.wpforms-submit:disabled,
+div.wpforms-container button[type="submit"]:disabled,
+div.wpforms-container input[type="submit"]:disabled {
+	background: var(--shs-colour-disabled-bg) !important;
+	border-color: var(--shs-colour-border-light) !important;
+	color: var(--shs-colour-disabled-text) !important;
+	cursor: not-allowed;
+}
+
+
+/* ---------------------------------------------------------
+   Secondary button
+   Used for softer actions:
+   - View all guides
+   - Read more
+   - Learn more
+   - Back to shop
+   --------------------------------------------------------- */
+
+a.shs-button-secondary,
+button.shs-button-secondary,
+input[type="submit"].shs-button-secondary,
+.shs-button-secondary .gb-button,
+.shs-button-secondary .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 40px;
+	padding: 0 18px;
+
+	border: 1px solid var(--shs-colour-border-soft);
+	border-radius: var(--shs-radius-lg);
+
+	background: var(--shs-colour-white);
+	color: var(--shs-colour-primary-dark);
+
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+
+	text-decoration: none !important;
+	cursor: pointer;
+
+	box-sizing: border-box;
+
+	transition:
+		background-color 0.18s ease,
+		border-color 0.18s ease,
+		color 0.18s ease,
+		box-shadow 0.18s ease,
+		transform 0.18s ease;
+}
+
+a.shs-button-secondary:hover,
+button.shs-button-secondary:hover,
+input[type="submit"].shs-button-secondary:hover,
+.shs-button-secondary .gb-button:hover,
+.shs-button-secondary .wp-block-button__link:hover {
+	border-color: var(--shs-colour-primary);
+	background: var(--shs-colour-primary-soft);
+	color: var(--shs-colour-dark-brand);
+
+	text-decoration: none !important;
+}
+
+a.shs-button-secondary:focus-visible,
+button.shs-button-secondary:focus-visible,
+input[type="submit"].shs-button-secondary:focus-visible,
+.shs-button-secondary .gb-button:focus-visible,
+.shs-button-secondary .wp-block-button__link:focus-visible {
+	outline: 3px solid rgba(38, 180, 188, 0.24);
+	outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   GenerateBlocks button reset
+   --------------------------------------------------------- */
+
+a.gb-text.shs-button-primary,
+a.gb-text.shs-button-secondary {
+	flex-direction: row;
+	align-self: center;
+	width: fit-content;
+}
+
+
+
+
+/* =========================================================
+   FAQ accordion
+   shs-faq-container
+   shs-faq
+   Standard
+   ========================================================= */
+
+.shs-faq-container {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.shs-faq {
+	display: grid;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   FAQ items
+   --------------------------------------------------------- */
+
+.shs-faq > * {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	background: var(--shs-colour-surface);
+	border: 1px solid var(--shs-colour-border-soft);
+	border-radius: var(--shs-radius-md);
+	box-shadow: var(--shs-shadow-card);
+	transition:
+		border-color var(--shs-transition-standard),
+		box-shadow var(--shs-transition-standard),
+		background-color var(--shs-transition-standard);
+}
+
+/* Teal marker makes every question feel interactive */
+.shs-faq > *::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 4px;
+	background: var(--shs-colour-primary);
+	transition: background-color var(--shs-transition-standard);
+}
+
+.shs-faq > *:hover {
+	border-color: var(--shs-colour-primary);
+	box-shadow: var(--shs-shadow-card-hover);
+}
+
+/* Open state */
+.shs-faq > *:has([aria-expanded="true"]) {
+	border-color: var(--shs-colour-primary);
+	box-shadow: var(--shs-shadow-card-hover);
+}
+
+
+/* ---------------------------------------------------------
+   Question / toggle
+   --------------------------------------------------------- */
+
+.shs-faq .wp-block-accordion-heading {
+	margin: 0;
+}
+
+.shs-faq :is(
+	.wp-block-accordion-heading__toggle,
+	button[aria-expanded],
+	summary
+) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 68px;
+	padding: 18px 24px 18px 28px;
+	background: var(--shs-colour-surface);
+	border: 0;
+	color: var(--shs-colour-heading);
+	font: inherit;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+	text-align: left;
+	cursor: pointer;
+	text-decoration: none !important;
+	transition:
+		background-color var(--shs-transition-standard),
+		color var(--shs-transition-standard);
+}
+
+/* Remove all theme underline behaviour from accordion headings */
+.shs-faq :is(
+	.wp-block-accordion-heading__toggle,
+	.wp-block-accordion-heading__toggle *,
+	button[aria-expanded],
+	button[aria-expanded] *,
+	summary,
+	summary *
+) {
+	text-decoration: none !important;
+	border-bottom: 0 !important;
+	box-shadow: none !important;
+}
+
+.shs-faq :is(
+	.wp-block-accordion-heading__toggle,
+	button[aria-expanded],
+	summary
+):hover {
+	background: var(--shs-colour-primary-soft);
+	color: var(--shs-colour-heading);
+}
+
+/* Open question row */
+.shs-faq :is(
+	.wp-block-accordion-heading__toggle,
+	button[aria-expanded]
+)[aria-expanded="true"] {
+	background: var(--shs-colour-primary-soft);
+	color: var(--shs-colour-heading);
+}
+
+.shs-faq :is(
+	.wp-block-accordion-heading__toggle,
+	button[aria-expanded],
+	summary
+):focus-visible {
+	outline: 2px solid var(--shs-colour-primary);
+	outline-offset: -2px;
+}
+
+
+/* ---------------------------------------------------------
+   Answer panel
+   --------------------------------------------------------- */
+
+.shs-faq :is(
+	.wp-block-accordion-panel,
+	[role="region"]
+) {
+	padding: 20px 24px 24px 28px;
+	background: var(--shs-colour-surface);
+	border-top: 1px solid var(--shs-colour-border-soft);
+}
+
+.shs-faq :is(
+	.wp-block-accordion-panel,
+	[role="region"]
+) > :first-child {
+	margin-top: 0;
+}
+
+.shs-faq :is(
+	.wp-block-accordion-panel,
+	[role="region"]
+) > :last-child {
+	margin-bottom: 0;
+}
+
+.shs-faq :is(
+	.wp-block-accordion-panel,
+	[role="region"]
+) p {
+	margin: 0;
+	color: var(--shs-colour-text);
+	line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   Service content sections
+   Shared card system
+   Classes:
+   - shs-service-section
+   - shs-service-grid
+   - shs-service-item
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Section spacing and headings
+   --------------------------------------------------------- */
+
+.shs-service-section {
+	margin-top: 36px;
+}
+
+/* ---------------------------------------------------------
+   Service cards
+   --------------------------------------------------------- */
+
+.shs-service-item {
+	position: relative;
+	padding: 28px 24px;
+	background: var(--shs-colour-surface);
+	border: 1px solid var(--shs-colour-border-soft);
+	border-radius: var(--shs-radius-md);
+	box-shadow: var(--shs-shadow-card);
+	transition:
+		border-color var(--shs-transition-standard),
+		box-shadow var(--shs-transition-standard),
+		transform var(--shs-transition-standard);
+}
+
+/* Teal accent that makes the cards feel connected to SHS,
+   without turning the whole card teal. */
+.shs-service-item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 24px;
+	left: 24px;
+	height: 3px;
+	background: var(--shs-colour-primary);
+	border-radius: 0 0 var(--shs-radius-pill) var(--shs-radius-pill);
+	opacity: 0.85;
+}
+
+
+/* ---------------------------------------------------------
+   Card typography
+   --------------------------------------------------------- */
+
+.shs-service-item > p {
+	margin: 0;
+}
+
+/* ---------------------------------------------------------
+   Supporting note below a service grid
+   Used for the no-obligation text in "How it works"
+   --------------------------------------------------------- */
+
+.shs-service-grid + p {
+	margin: 28px 0 0;
+	padding: 16px 20px;
+	background: var(--shs-colour-primary-soft);
+	border-left: 3px solid var(--shs-colour-primary);
+	border-radius: 0 var(--shs-radius-sm) var(--shs-radius-sm) 0;
+	color: var(--shs-colour-text);
+	line-height: 1.65;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+
+@media (max-width: 640px) {
+	.shs-service-item {
+		padding: 24px 20px;
+	}
+	
+	.shs-service-item::before {
+		right: 20px;
+		left: 20px;
+	}
+
+	.shs-service-grid + p {
+		margin-top: 20px;
+		padding: 14px 16px;
+	}
+}
+
+
+/* =========================================================
+   Service process section
+   Used with:
+   shs-service-section shs-service-section--process
+   ========================================================= */
+
+.shs-service-section--process {
+	padding: 36px;
+	background: var(--shs-colour-primary-soft);
+	border: 1px solid var(--shs-colour-border-soft);
+	border-radius: var(--shs-radius-lg);
+}
+
+.shs-service-section--process > :is(
+	h2,
+	.wp-block-heading,
+	.gb-headline
+) {
+	margin-bottom: 32px;
+}
+
+
+/* ---------------------------------------------------------
+   Process grid
+   --------------------------------------------------------- */
+
+.shs-service-section--process .shs-service-grid {
+	gap: 0;
+	counter-reset: shs-process-step;
+}
+
+
+/* ---------------------------------------------------------
+   Process steps
+   Overrides the normal service-card treatment
+   --------------------------------------------------------- */
+
+.shs-service-section--process .shs-service-item {
+	position: relative;
+	padding: 0 28px;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	counter-increment: shs-process-step;
+}
+
+/* Removes the teal top rule from normal cards
+   and replaces it with a proper step number. */
+.shs-service-section--process .shs-service-item::before {
+	content: counter(shs-process-step, decimal-leading-zero);
+	position: static;
+	display: block;
+	width: auto;
+	height: auto;
+	margin: 0 0 14px;
+	background: transparent;
+	border-radius: 0;
+	color: var(--shs-colour-primary-dark);
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1;
+	opacity: 1;
+}
+
+.shs-service-section--process .shs-service-item:first-child {
+	padding-left: 0;
+}
+
+.shs-service-section--process .shs-service-item:last-child {
+	padding-right: 0;
+}
+
+/* Vertical separators between steps */
+.shs-service-section--process .shs-service-item + .shs-service-item {
+	border-left: 1px solid var(--shs-colour-border-soft);
+}
+
+.shs-service-section--process .shs-service-item > :is(
+	h3,
+	h4,
+	.wp-block-heading,
+	.gb-headline
+) {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.shs-service-section--process .shs-service-item > p {
+	color: var(--shs-colour-text);
+}
+
+
+/* ---------------------------------------------------------
+   No-obligation note
+   Integrates the existing paragraph into the process panel
+   --------------------------------------------------------- */
+
+.shs-service-section--process .shs-service-grid + p {
+	max-width: none;
+	margin: 32px 0 0;
+	padding: 20px 0 0 20px;
+	background: transparent;
+	border-top: 1px solid var(--shs-colour-border-soft);
+	border-left: 3px solid var(--shs-colour-primary);
+	border-radius: 0;
+	color: var(--shs-colour-text);
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+	.shs-service-section--process {
+		padding: 30px;
+	}
+
+	.shs-service-section--process .shs-service-grid {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+
+	.shs-service-section--process .shs-service-item {
+		padding: 24px 0;
+	}
+
+	.shs-service-section--process .shs-service-item:first-child {
+		padding-top: 0;
+	}
+
+	.shs-service-section--process .shs-service-item:last-child {
+		padding-bottom: 0;
+	}
+
+	.shs-service-section--process .shs-service-item + .shs-service-item {
+		border-top: 1px solid var(--shs-colour-border-soft);
+		border-left: 0;
+	}
+}
+
+@media (max-width: 640px) {
+	.shs-service-section--process {
+		padding: 24px 20px;
+	}
+
+	.shs-service-section--process > :is(
+		h2,
+		.wp-block-heading,
+		.gb-headline
+	) {
+		margin-bottom: 24px;
+	}
+
+	.shs-service-section--process .shs-service-item::before {
+		margin-bottom: 10px;
+		font-size: 1.75rem;
+	}
+
+	.shs-service-section--process .shs-service-grid + p {
+		margin-top: 24px;
+		padding-top: 18px;
+		padding-left: 16px;
+	}
+}
+
+
+
+/* =========================================================
+   WPForms
+   Shared SmartHomeShopUK form styling
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Form heading and description
+   --------------------------------------------------------- */
+
+div.wpforms-container-full .wpforms-title {
+	color: var(--shs-colour-heading);
+	font-family: inherit !important;
+	font-size: 35px !important;
+	font-weight: 600 !important;
+	line-height: 42px !important;
+	letter-spacing: normal;
+}
+
+div.wpforms-container-full .wpforms-description {
+	color: var(--shs-colour-text);
+	font-family: inherit !important;
+	font-size: 17px !important;
+	font-weight: 400 !important;
+	line-height: 28px !important;
+}
+
+
+/* ---------------------------------------------------------
+   Labels and field help
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form .wpforms-field-label {
+	margin-bottom: 8px;
+	color: var(--shs-colour-heading);
+	font-family: inherit !important;
+	font-size: 17px !important;
+	font-weight: 600 !important;
+	line-height: 24px !important;
+}
+
+div.wpforms-container-full form.wpforms-form .wpforms-required-label {
+	color: var(--shs-colour-error, #c62828) !important;
+}
+
+div.wpforms-container-full form.wpforms-form .wpforms-field-description {
+	margin-top: 6px;
+	color: var(--shs-colour-muted);
+	font-family: inherit !important;
+	font-size: 17px !important;
+	font-weight: 400 !important;
+	line-height: 28px !important;
+}
+
+
+/* ---------------------------------------------------------
+   Text inputs, dropdowns and textareas
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form :is(
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="number"],
+	input[type="password"],
+	input[type="date"],
+	input[type="time"],
+	select,
+	textarea
+) {
+	width: 100%;
+	max-width: none;
+
+	background: var(--shs-colour-surface) !important;
+	border: 1px solid var(--shs-colour-border) !important;
+	border-radius: var(--shs-radius-sm) !important;
+	box-shadow: none !important;
+
+	color: var(--shs-colour-heading) !important;
+	font-family: inherit !important;
+	font-size: 17px !important;
+	font-weight: 400 !important;
+	line-height: 28px !important;
+
+	transition:
+		border-color var(--shs-transition-standard),
+		box-shadow var(--shs-transition-standard),
+		background-color var(--shs-transition-standard);
+}
+
+
+
+div.wpforms-container-full form.wpforms-form textarea {
+	min-height: 156px;
+	padding: 12px 14px !important;
+	resize: vertical;
+}
+
+
+/* ---------------------------------------------------------
+   Placeholder text
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form :is(
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="number"],
+	input[type="password"],
+	input[type="date"],
+	input[type="time"],
+	textarea
+)::placeholder {
+	color: var(--shs-colour-subtle);
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 28px;
+	opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   Field hover and focus states
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form :is(
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="number"],
+	input[type="password"],
+	input[type="date"],
+	input[type="time"],
+	select,
+	textarea
+):hover {
+	border-color: var(--shs-colour-border-soft) !important;
+}
+
+div.wpforms-container-full form.wpforms-form :is(
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="number"],
+	input[type="password"],
+	input[type="date"],
+	input[type="time"],
+	select,
+	textarea
+):focus {
+	background: var(--shs-colour-white) !important;
+	border-color: var(--shs-colour-primary) !important;
+	box-shadow: 0 0 0 3px var(--shs-colour-primary-soft) !important;
+	outline: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Dropdowns
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form select {
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%235E5A5D' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+	background-position: right 14px center !important;
+	background-repeat: no-repeat !important;
+	background-size: 12px 8px !important;
+
+	padding-right: 42px !important;
+}
+
+
+/* ---------------------------------------------------------
+   Checkboxes and consent fields
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form :is(
+	.wpforms-field-checkbox,
+	.wpforms-field-gdpr-checkbox
+) ul {
+	margin: 0;
+}
+
+div.wpforms-container-full form.wpforms-form :is(
+	.wpforms-field-checkbox,
+	.wpforms-field-gdpr-checkbox
+) li {
+	display: flex;
+	align-items: flex-start;
+	margin: 0;
+}
+
+div.wpforms-container-full form.wpforms-form :is(
+	.wpforms-field-checkbox,
+	.wpforms-field-gdpr-checkbox
+) input[type="checkbox"] {
+	flex: 0 0 auto;
+	width: 18px;
+	height: 18px;
+	margin: 4px 10px 0 0;
+
+	accent-color: var(--shs-colour-primary);
+	cursor: pointer;
+}
+
+div.wpforms-container-full form.wpforms-form :is(
+	.wpforms-field-checkbox,
+	.wpforms-field-gdpr-checkbox
+) label {
+	color: var(--shs-colour-text);
+	font-family: inherit !important;
+	font-size: 17px !important;
+	font-weight: 400 !important;
+	line-height: 28px !important;
+	cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   Submit spacing
+   Submit button styling is handled by the shared button CSS.
+   --------------------------------------------------------- */
+
+div.wpforms-container-full form.wpforms-form .wpforms-submit-container {
+	padding-top: 4px !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+	div.wpforms-container-full .wpforms-head-container {
+		margin-bottom: 28px;
+	}
+
+	div.wpforms-container-full .wpforms-title {
+		font-size: 28px !important;
+		line-height: 36px !important;
+	}
+
+	div.wpforms-container-full form.wpforms-form .wpforms-field {
+		padding-bottom: 20px;
+	}
+
+	div.wpforms-container-full form.wpforms-form textarea {
+		min-height: 140px;
+	}
+
+	div.wpforms-container-full form.wpforms-form button[type="submit"] {
+		width: 100%;
+	}
+}

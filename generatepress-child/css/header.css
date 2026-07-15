@@ -1,0 +1,263 @@
+/* =========================================================
+   Header Responsive Control
+   SmartHomeShopUK
+   Clean ecommerce header
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Header title visibility
+   --------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+    .site-header .site-branding {
+        display: block !important;
+    }
+}
+
+@media (max-width: 1279px) {
+    .site-header .site-branding {
+        display: none !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   2. Logo/title cleanup
+   --------------------------------------------------------- */
+
+.site-header .site-logo,
+.site-header .site-branding,
+.site-header .main-title {
+    margin: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. Menu visibility
+   Desktop nav row above 1024px
+   Header accordion menu at 1024px and below
+   --------------------------------------------------------- */
+
+@media (min-width: 1025px) {
+    nav#site-navigation {
+        display: block !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav#site-navigation {
+        display: none !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary {
+        display: block !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   4. Desktop header layout above 1024px
+   Logo/title or logo | full-width search | cart | account
+   --------------------------------------------------------- */
+
+@media (min-width: 1025px) {
+    .site-header .inside-header {
+        gap: 24px !important;
+    }
+
+    .site-header .site-branding-container {
+        gap: 12px !important;
+    }
+
+    .site-header .header-widget {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .site-header .header-widget .wp-block-group,
+    .site-header .shs-header-utilities {
+        gap: 18px !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   5. Header layout at 1024px and below
+   Menu | logo | search | cart | account
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .site-header .inside-header {
+        display: grid !important;
+        grid-template-columns: auto auto minmax(160px, 1fr) auto auto;
+        grid-template-areas: "menu logo search cart account";
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100%;
+    }
+
+    .site-header .header-widget,
+    .site-header .header-widget > .widget,
+    .site-header .header-widget .wp-block-group,
+    .site-header .shs-header-utilities {
+        display: contents !important;
+    }
+
+    .site-header .site-branding-container {
+        grid-area: logo !important;
+    }
+
+    .site-header .dgwt-wcas-search-wrapp {
+        grid-area: search !important;
+    }
+
+    .site-header .wp-block-woocommerce-mini-cart {
+        grid-area: cart !important;
+        justify-self: end !important;
+    }
+
+    .site-header .wp-block-woocommerce-customer-account {
+        grid-area: account !important;
+        justify-self: end !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   6. Very small mobile header below 600px
+   Menu | logo | cart
+   Search full-width underneath
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .site-header .inside-header {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+            "menu logo cart"
+            "search search search";
+        gap: 10px 12px !important;
+    }
+
+    .site-header .site-branding-container {
+        justify-self: center !important;
+    }
+
+    .site-header .wp-block-woocommerce-customer-account {
+        display: none !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   7. Header utility icons and mini-cart
+   --------------------------------------------------------- */
+
+.shs-header-utilities .wc-block-mini-cart__icon,
+.shs-header-utilities .wc-block-customer-account__account-icon {
+    color: var(--shs-colour-white) !important;
+    fill: var(--shs-colour-white) !important;
+}
+
+.shs-header-utilities .wc-block-mini-cart__button,
+.shs-header-utilities .wc-block-mini-cart__button:hover,
+.shs-header-utilities .wc-block-mini-cart__button:focus {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.shs-header-utilities .wc-block-mini-cart__button:hover svg,
+.shs-header-utilities .wc-block-mini-cart__button:hover svg path,
+.shs-header-utilities .wc-block-customer-account__link:hover svg,
+.shs-header-utilities .wc-block-customer-account__link:hover svg path,
+.shs-header-utilities .wc-block-customer-account__link:hover svg circle {
+    color: var(--shs-colour-primary) !important;
+    fill: var(--shs-colour-primary) !important;
+}
+
+.shs-header-utilities .wc-block-mini-cart__button:hover .wc-block-mini-cart__badge,
+.shs-header-utilities .wc-block-mini-cart__button:focus .wc-block-mini-cart__badge {
+    background-color: var(--shs-colour-primary) !important;
+    color: var(--shs-colour-white) !important;
+}
+
+
+/* ---------------------------------------------------------
+   8. Desktop navigation row styling
+   Applies above 1024px only
+   --------------------------------------------------------- */
+
+@media (min-width: 1025px) {
+    nav#site-navigation {
+        background: var(--shs-colour-dark-surface) !important;
+        border-top: 1px solid var(--shs-colour-dark-border-subtle);
+        border-bottom: 1px solid var(--shs-colour-dark-border-subtle);
+    }
+
+    nav#site-navigation .inside-navigation {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        max-width: var(--shs-container-content);
+        min-height: 46px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    nav#site-navigation #mega-menu-wrap-primary {
+        width: auto !important;
+    }
+
+    nav#site-navigation #mega-menu-primary {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px;
+    }
+
+    nav#site-navigation #mega-menu-primary > li {
+        margin: 0 !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li > a.mega-menu-link {
+        height: 46px !important;
+        line-height: 46px !important;
+        padding: 0 14px !important;
+
+        background: transparent !important;
+        color: var(--shs-colour-white) !important;
+
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+
+        transition:
+            color var(--shs-transition-fast),
+            background-color var(--shs-transition-fast);
+    }
+
+    nav#site-navigation #mega-menu-primary > li:hover > a.mega-menu-link,
+    nav#site-navigation #mega-menu-primary > li.mega-toggle-on > a.mega-menu-link,
+    nav#site-navigation #mega-menu-primary > li.current-menu-item > a.mega-menu-link,
+    nav#site-navigation #mega-menu-primary > li.current-menu-ancestor > a.mega-menu-link {
+        background: var(--shs-colour-dark-hover-subtle) !important;
+        color: var(--shs-colour-primary) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li > a .mega-indicator {
+        margin-left: 5px !important;
+    }
+}

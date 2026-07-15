@@ -1,0 +1,630 @@
+/* =========================================================
+   Recent Guides Section
+   Shared across archives, posts and products
+   ========================================================= */
+
+.shs-archive-guides {
+    position: relative;
+
+    width: 100%;
+    max-width: var(--shs-container-wide);
+
+    margin: 56px auto 80px;
+    padding: 44px var(--shs-page-padding-desktop) 0;
+
+    box-sizing: border-box;
+}
+
+.shs-archive-guides::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: var(--shs-page-padding-desktop);
+    right: var(--shs-page-padding-desktop);
+
+    height: 1px;
+
+    background: var(--shs-colour-border-soft);
+}
+
+
+/* ---------------------------------------------------------
+   Recent Guides: header
+   --------------------------------------------------------- */
+
+.shs-archive-guides__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+
+    margin-bottom: 28px;
+}
+
+.shs-archive-guides__intro h2 {
+    margin: 0 0 8px;
+
+    color: var(--shs-colour-heading);
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.shs-archive-guides__intro p {
+    max-width: 680px;
+    margin: 0;
+
+    color: var(--shs-colour-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.shs-archive-guides__view-all {
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Recent Guides: grid and cards
+   --------------------------------------------------------- */
+
+.shs-archive-guides__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.shs-archive-guide-card {
+    min-width: 0;
+}
+
+.shs-archive-guide-card__link {
+    display: block;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: transform var(--shs-transition-standard);
+}
+
+.shs-archive-guide-card__link:hover {
+    transform: translateY(-2px);
+
+    text-decoration: none;
+}
+
+.shs-archive-guide-card__link,
+.shs-archive-guide-card__link:hover,
+.shs-archive-guide-card__link:focus,
+.shs-archive-guide-card__link:visited,
+.shs-archive-guide-card__link * {
+    text-decoration: none !important;
+}
+
+.shs-archive-guide-card__image-wrap {
+    overflow: hidden;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 14px;
+
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-xl);
+
+    background: var(--shs-colour-surface-soft);
+
+    transition: box-shadow var(--shs-transition-standard);
+}
+
+.shs-archive-guide-card__link:hover .shs-archive-guide-card__image-wrap {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.shs-archive-guide-card__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.shs-archive-guide-card__placeholder {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(135deg, #eef4f3 0%, #f8fbfb 100%);
+}
+
+.shs-archive-guide-card__content h3 {
+    margin: 0 0 8px;
+
+    color: var(--shs-colour-heading);
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 700;
+
+    transition: color var(--shs-transition-standard);
+}
+
+.shs-archive-guide-card__date {
+    color: var(--shs-colour-subtle);
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    transition: color var(--shs-transition-standard);
+}
+
+.shs-archive-guide-card__link:hover h3,
+.shs-archive-guide-card__link:hover .shs-archive-guide-card__date {
+    color: var(--shs-colour-primary-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Recent Guides: mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .shs-archive-guides {
+        max-width: none;
+
+        margin: 40px auto 56px;
+        padding: 36px var(--shs-page-padding-mobile) 0;
+    }
+
+    .shs-archive-guides::before {
+        left: var(--shs-page-padding-mobile);
+        right: var(--shs-page-padding-mobile);
+    }
+
+    .shs-archive-guides__header {
+        display: block;
+
+        margin-bottom: 24px;
+    }
+
+    .shs-archive-guides__intro h2 {
+        margin-bottom: 8px;
+
+        font-size: 23px;
+        line-height: 1.25;
+    }
+
+    .shs-archive-guides__intro p {
+        max-width: none;
+
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .shs-archive-guides__view-all {
+        display: inline-flex;
+        margin-top: 18px;
+    }
+
+    .shs-archive-guides__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .shs-archive-guide-card__image-wrap {
+        margin-bottom: 12px;
+
+        border-radius: var(--shs-radius-lg);
+    }
+
+    .shs-archive-guide-card__content h3 {
+        margin-bottom: 6px;
+
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .shs-archive-guide-card__date {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+}
+
+
+/* =========================================================
+   Recent Products Section
+   Shared across posts and products
+   ========================================================= */
+
+.shs-recent-products {
+    position: relative;
+
+    width: 100%;
+    max-width: var(--shs-container-wide);
+
+    margin: 56px auto 80px;
+    padding: 44px var(--shs-page-padding-desktop) 0;
+
+    box-sizing: border-box;
+}
+
+.shs-recent-products::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: var(--shs-page-padding-desktop);
+    right: var(--shs-page-padding-desktop);
+
+    height: 1px;
+
+    background: var(--shs-colour-border-soft);
+}
+
+
+/* ---------------------------------------------------------
+   Recent Products: header
+   --------------------------------------------------------- */
+
+.shs-recent-products__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+
+    margin-bottom: 28px;
+}
+
+.shs-recent-products__intro h2 {
+    margin: 0 0 8px;
+
+    color: var(--shs-colour-heading);
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.shs-recent-products__intro p {
+    max-width: 680px;
+    margin: 0;
+
+    color: var(--shs-colour-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.shs-recent-products__view-all {
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Recent Products: grid and cards
+   --------------------------------------------------------- */
+
+.shs-recent-products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.shs-recent-product-card {
+    min-width: 0;
+    height: 100%;
+}
+
+.shs-recent-product-card__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    padding: 14px;
+    border: 1px solid var(--shs-colour-border);
+    border-radius: var(--shs-radius-xl);
+
+    background: var(--shs-colour-surface-card);
+    box-shadow: var(--shs-shadow-card);
+
+    color: inherit;
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition:
+        box-shadow var(--shs-transition-standard),
+        transform var(--shs-transition-standard),
+        border-color var(--shs-transition-standard),
+        background var(--shs-transition-standard);
+}
+
+.shs-recent-product-card__link:hover {
+    border-color: var(--shs-colour-primary-hover);
+    background: var(--shs-colour-primary-soft);
+    box-shadow: var(--shs-shadow-card-hover);
+    transform: translateY(-2px);
+
+    text-decoration: none;
+}
+
+.shs-recent-product-card__link,
+.shs-recent-product-card__link:hover,
+.shs-recent-product-card__link:focus,
+.shs-recent-product-card__link:visited,
+.shs-recent-product-card__link * {
+    text-decoration: none !important;
+}
+
+.shs-recent-product-card__image-wrap {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 14px;
+    padding: 12px;
+
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-lg);
+
+    background: var(--shs-colour-white);
+
+    box-sizing: border-box;
+}
+
+.shs-recent-product-card__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+.shs-recent-product-card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.shs-recent-product-card__content h3 {
+    margin: 0 0 8px;
+
+    color: var(--shs-colour-heading);
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.shs-recent-product-card__price {
+    margin-top: auto;
+
+    color: var(--shs-colour-primary-dark);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.shs-recent-product-card__link:hover h3,
+.shs-recent-product-card__link:focus h3,
+.shs-recent-product-card__link:visited h3 {
+    color: var(--shs-colour-heading);
+}
+
+.shs-recent-product-card__link:hover .shs-recent-product-card__price,
+.shs-recent-product-card__link:focus .shs-recent-product-card__price,
+.shs-recent-product-card__link:visited .shs-recent-product-card__price {
+    color: var(--shs-colour-primary-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Recent Products: responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .shs-recent-products__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .shs-recent-products {
+        max-width: none;
+
+        margin: 40px auto 56px;
+        padding: 36px var(--shs-page-padding-mobile) 0;
+    }
+
+    .shs-recent-products::before {
+        left: var(--shs-page-padding-mobile);
+        right: var(--shs-page-padding-mobile);
+    }
+
+    .shs-recent-products__header {
+        display: block;
+
+        margin-bottom: 24px;
+    }
+
+    .shs-recent-products__intro h2 {
+        margin-bottom: 8px;
+
+        font-size: 23px;
+        line-height: 1.25;
+    }
+
+    .shs-recent-products__intro p {
+        max-width: none;
+
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .shs-recent-products__view-all {
+        display: inline-flex;
+        margin-top: 18px;
+    }
+
+    .shs-recent-products__grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .shs-recent-product-card__image-wrap {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   Reusable Content Cards
+   Shared styling for guides, services, and hub pages
+   ========================================================= */
+
+.shs-content-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-xl);
+
+    background: var(--shs-colour-surface-card);
+    color: inherit;
+
+    box-shadow: var(--shs-shadow-card);
+
+    box-sizing: border-box;
+
+    transition:
+        border-color var(--shs-transition-standard),
+        background-color var(--shs-transition-standard),
+        box-shadow var(--shs-transition-standard),
+        transform var(--shs-transition-standard);
+}
+
+
+/* ---------------------------------------------------------
+   Linked card behaviour
+   --------------------------------------------------------- */
+
+a.shs-content-card,
+a.shs-content-card:visited,
+a.shs-content-card:hover,
+a.shs-content-card:focus,
+a.shs-content-card:active {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   Card hover
+   Matches the original guide-card hover exactly
+   --------------------------------------------------------- */
+
+.shs-content-card:hover {
+    border-color: var(--shs-colour-primary-hover);
+    background: var(--shs-colour-primary-soft);
+    box-shadow: var(--shs-shadow-card-hover);
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   Card media
+   Image ratio and margin stay page-specific
+   --------------------------------------------------------- */
+
+.shs-content-card__media {
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-lg);
+
+    background: var(--shs-colour-white);
+
+    box-sizing: border-box;
+}
+
+.shs-content-card__media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ---------------------------------------------------------
+   Card content
+   --------------------------------------------------------- */
+
+.shs-content-card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Card action
+   Used for “Read guide” and “Explore…” text
+   --------------------------------------------------------- */
+
+.shs-content-card__action {
+    margin: auto 0 0;
+
+    color: var(--shs-colour-primary-dark);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.shs-content-card__action a,
+.shs-content-card__action a:visited,
+.shs-content-card__action a:hover,
+.shs-content-card__action a:focus,
+.shs-content-card__action a:active {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   Full-card overlay links
+   --------------------------------------------------------- */
+
+.shs-content-card {
+    position: relative;
+}
+
+.shs-content-card__overlay-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: block;
+
+    border-radius: inherit;
+    text-decoration: none !important;
+}
+
+.shs-content-card__overlay-link:focus-visible {
+    outline: 3px solid var(--shs-colour-primary);
+    outline-offset: -3px;
+}

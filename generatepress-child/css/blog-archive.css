@@ -1,0 +1,496 @@
+/* =========================================================
+   Blog / Guides Archive
+   SmartHomeShopUK
+   Category / Tag / Author / Standard Archives
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Main archive container
+   --------------------------------------------------------- */
+
+.shs-blog-archive-container {
+    width: 100%;
+    max-width: var(--shs-container-wide);
+
+    margin: 0 auto;
+    padding: 42px var(--shs-page-padding-desktop) 72px;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   Archive toolbar + search
+   --------------------------------------------------------- */
+
+.shs-blog-archive-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 22px;
+}
+
+.shs-blog-archive-count {
+    flex: 0 0 auto;
+
+    margin: 0;
+
+    color: var(--shs-colour-subtle);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.shs-blog-archive-search {
+    flex: 0 1 360px;
+    max-width: 360px;
+    margin: 0;
+}
+
+.shs-blog-archive-search__input {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 14px;
+
+    border: 1px solid var(--shs-colour-border-soft);
+    border-radius: var(--shs-radius-lg);
+
+    background: var(--shs-colour-white);
+    color: var(--shs-colour-text);
+
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+
+    box-sizing: border-box;
+}
+
+.shs-blog-archive-search__input::placeholder {
+    color: var(--shs-colour-subtle);
+}
+
+.shs-blog-archive-search__input:focus {
+    outline: none;
+    border-color: var(--shs-colour-primary);
+    box-shadow: 0 0 0 3px rgba(38, 180, 188, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   3. Topic filters
+   --------------------------------------------------------- */
+
+.shs-blog-topic-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 0 0 30px;
+}
+
+.shs-blog-topic-nav__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+    padding: 0 15px;
+
+    border: 1px solid var(--shs-colour-border-soft);
+    border-radius: var(--shs-radius-pill);
+
+    background: var(--shs-colour-white);
+    color: var(--shs-colour-primary-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    transition:
+        background-color var(--shs-transition-fast),
+        border-color var(--shs-transition-fast),
+        color var(--shs-transition-fast),
+        box-shadow var(--shs-transition-fast);
+}
+
+.shs-blog-topic-nav__link:hover {
+    border-color: var(--shs-colour-primary);
+    background: var(--shs-colour-primary-soft);
+    color: var(--shs-colour-primary-dark);
+
+    text-decoration: none !important;
+}
+
+.shs-blog-topic-nav__link.is-active,
+.shs-blog-topic-nav__link.is-active:hover {
+    border-color: var(--shs-colour-primary-dark);
+    background: var(--shs-colour-primary-dark);
+    color: var(--shs-colour-white);
+
+    box-shadow: none;
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Archive layout
+   --------------------------------------------------------- */
+
+.shs-blog-archive-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+
+/* ---------------------------------------------------------
+   6. Guide grid
+   --------------------------------------------------------- */
+
+.shs-blog-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 24px;
+    align-items: stretch;
+}
+
+.shs-blog-card-filter-item[hidden] {
+    display: none !important;
+}
+
+.shs-blog-card-filter-item {
+    display: flex;
+    min-width: 0;
+}
+
+.shs-blog-card-filter-item > * {
+	display: flex;
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   7. Guide cards
+   --------------------------------------------------------- */
+
+.shs-blog-card__link,
+.shs-blog-card__link:hover,
+.shs-blog-card__link:focus {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   Guide card media
+   --------------------------------------------------------- */
+
+.shs-blog-card__image-wrap {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 14px;
+}
+
+.shs-blog-card__placeholder {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #eef4f3 0%,
+        #f8fbfb 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Guide card content
+   --------------------------------------------------------- */
+
+.shs-blog-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: var(--shs-colour-subtle);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.shs-blog-card__category {
+    color: var(--shs-colour-primary-dark);
+}
+
+.shs-blog-card__title {
+    margin: 0 0 10px;
+
+    color: var(--shs-colour-heading);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.shs-blog-card__excerpt {
+    margin: 0 0 16px;
+
+    color: var(--shs-colour-text);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.shs-blog-card__excerpt p {
+    margin: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Guide card action
+   --------------------------------------------------------- */
+
+.shs-blog-card__read-more {
+    color: var(--shs-colour-primary-dark);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+
+/* ---------------------------------------------------------
+   8. Sidebar
+   --------------------------------------------------------- */
+
+.shs-blog-sidebar-block {
+    margin: 0 0 28px;
+}
+
+.shs-blog-sidebar-block__title {
+    margin: 0 0 16px;
+
+    color: var(--shs-colour-heading);
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.shs-blog-sidebar-block p {
+    margin: 0 0 18px;
+
+    color: var(--shs-colour-text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+.shs-blog-sidebar-block--request .shs-blog-sidebar-block__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+
+.shs-blog-sidebar-block--request {
+    padding: 22px;
+
+    border: 1px solid var(--shs-colour-border-soft);
+    border-radius: var(--shs-radius-xl);
+
+    background: var(--shs-colour-primary-soft);
+    box-shadow: var(--shs-shadow-sidebar);
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------
+   9. Sidebar topic links
+   --------------------------------------------------------- */
+
+.shs-blog-sidebar-list {
+    margin: 0;
+    list-style: none;
+}
+
+.shs-blog-sidebar-list li + li {
+    border-top: 1px solid var(--shs-colour-border-soft);
+}
+
+.shs-blog-sidebar-list a {
+    display: block;
+    padding: 11px 0;
+    color: var(--shs-colour-heading);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    
+}
+
+.shs-blog-sidebar-list a:hover {
+	text-decoration: none !important;
+    color: var(--shs-colour-primary-dark);
+
+}
+
+
+/* ---------------------------------------------------------
+   10. Empty archive state
+   --------------------------------------------------------- */
+
+.shs-blog-archive-empty {
+    padding: 36px;
+
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-xl);
+
+    background: var(--shs-colour-white);
+    box-shadow: var(--shs-shadow-card);
+}
+
+.shs-blog-archive-empty h2 {
+    margin: 0 0 10px;
+
+    color: var(--shs-colour-heading);
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.shs-blog-archive-empty p {
+    margin: 0 0 18px;
+
+    color: var(--shs-colour-text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+
+/* ---------------------------------------------------------
+   11. Responsive: smaller desktop
+   --------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+
+    .shs-blog-archive-layout {
+        grid-template-columns: minmax(0, 1fr) 290px;
+        gap: 30px;
+    }
+
+    .shs-blog-archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shs-blog-sidebar-block__title {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   12. Responsive: tablet / mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .shs-blog-archive-container {
+        padding: 36px var(--shs-page-padding-tablet) 64px;
+    }
+
+    .shs-blog-archive-search {
+        max-width: none;
+    }
+
+    .shs-blog-archive-layout {
+        display: block;
+    }
+
+    .shs-blog-archive-sidebar {
+        margin-top: 42px;
+    }
+
+    .shs-blog-archive-sidebar__inner {
+        position: static;
+    }
+
+    .shs-blog-sidebar-block__title {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   13. Responsive: mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+    .shs-blog-archive-container {
+        padding: 32px var(--shs-page-padding-mobile) 56px;
+    }
+
+    .shs-blog-topic-nav {
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    .shs-blog-topic-nav__link {
+        min-height: 34px;
+        padding: 0 13px;
+
+        font-size: 13px;
+    }
+
+    .shs-blog-archive-toolbar {
+        display: block;
+        margin-bottom: 22px;
+    }
+
+    .shs-blog-archive-count {
+        margin: 0 0 12px;
+    }
+
+    .shs-blog-archive-search {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .shs-blog-archive-search__input {
+        width: 100%;
+        min-height: 42px;
+
+        border: 1px solid var(--shs-colour-border-soft);
+        border-radius: var(--shs-radius-lg);
+
+        box-sizing: border-box;
+    }
+
+    .shs-blog-archive-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .shs-blog-card__title {
+        font-size: 17px;
+    }
+
+    .shs-blog-sidebar-block--request,
+    .shs-blog-archive-empty {
+        padding: 22px;
+    }
+
+}

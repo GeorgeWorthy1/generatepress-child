@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .shs-services-help {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        row-gap: 0 !important;
+        gap: 0 !important;
+    }
+
+    .shs-services-help_copy {
+        width: 100%;
+        max-width: none;
+    }
+
+    .shs-services-help_button {
+        align-self: flex-start;
+    }
+}

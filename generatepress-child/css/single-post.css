@@ -1,0 +1,160 @@
+/* =========================================================
+   Single Post / Guide Page
+   SmartHomeShopUK
+   Lightweight template styling only
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Post header
+   --------------------------------------------------------- */
+
+.shs-post-hero {
+    max-width: var(--shs-container-wide);
+    padding: 16px var(--shs-page-padding-desktop) 0;
+    box-sizing: border-box;
+}
+
+.shs-post-hero-content {
+    max-width: var(--shs-container-content);
+    margin: 0 auto 24px;
+}
+
+.shs-post-category {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: var(--shs-colour-primary-dark);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.shs-post-category:hover {
+    color: var(--shs-colour-primary);
+    text-decoration: none;
+}
+
+.shs-post-title {
+    margin: 0 0 12px;
+
+    color: var(--shs-colour-heading);
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.shs-post-meta {
+    margin-bottom: 14px;
+
+    color: var(--shs-colour-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   Tags
+   --------------------------------------------------------- */
+
+.shs-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.shs-post-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+    border: 1px solid var(--shs-colour-border-soft);
+    border-radius: var(--shs-radius-pill);
+
+    background: var(--shs-colour-white);
+    color: var(--shs-colour-primary-dark);
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.shs-post-tag:hover {
+    border-color: var(--shs-colour-primary);
+    background: var(--shs-colour-primary-soft);
+    color: var(--shs-colour-primary-dark);
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   Featured image
+   --------------------------------------------------------- */
+
+.shs-post-hero-image {
+    overflow: hidden;
+    max-width: var(--shs-container-content);
+	max-height: 460px;
+    margin: 0 auto 36px;
+    border-radius: var(--shs-radius-xl);
+}
+
+.shs-post-hero-image img,
+.shs-post-hero-image__img {
+    display: block;
+    width: 100%;
+    height: auto;
+	max-height: 460px;
+	object-fit: cover;
+	object-position: center;
+	
+}
+
+
+/* ---------------------------------------------------------
+   Main post area
+   --------------------------------------------------------- */
+
+.shs-post-main {
+    max-width: var(--shs-container-wide);
+    margin: 0 auto;
+    padding: 0 var(--shs-page-padding-desktop) 64px;
+    box-sizing: border-box;
+}
+
+.shs-post-content {
+    max-width: var(--shs-container-content);
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .shs-post-hero {
+        padding: 32px var(--shs-page-padding-mobile) 0;
+    }
+
+    .shs-post-title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .shs-post-hero-image {
+        margin-bottom: 30px;
+        border-radius: var(--shs-radius-lg);
+    }
+
+    .shs-post-main {
+        padding: 0 var(--shs-page-padding-mobile) 52px;
+    }
+
+    .shs-post-final-cta {
+        margin-top: 48px;
+        padding: 22px;
+    }
+
+}

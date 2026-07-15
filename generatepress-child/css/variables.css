@@ -1,0 +1,94 @@
+/* =========================================================
+   SmartHomeShopUK Design Tokens
+   ========================================================= */
+
+:root {
+    /* -----------------------------------------------------
+       Core colours
+       ----------------------------------------------------- */
+
+    --shs-colour-white: #FFFFFF;
+    --shs-colour-heading: #222727;
+    --shs-colour-text: #4D4D4D;
+    --shs-colour-muted: #5E5A5D;
+    --shs-colour-subtle: #949494;
+
+    --shs-colour-primary: #26B4BC;
+    --shs-colour-primary-dark: #1F9CA3;
+    --shs-colour-primary-hover: #3DBDC2;
+    --shs-colour-primary-light: #46E3E8;
+    --shs-colour-primary-soft: #F2FBFC;
+
+    --shs-colour-sale: #FF9000;
+
+    /* -----------------------------------------------------
+       Surfaces
+       ----------------------------------------------------- */
+
+    --shs-colour-surface: #FFFFFF;
+    --shs-colour-surface-soft: #F7FAF9;
+    --shs-colour-surface-card: #F5F5F5;
+    --shs-colour-surface-light: #F7F7F7;
+
+    /* -----------------------------------------------------
+       Borders
+       ----------------------------------------------------- */
+
+    --shs-colour-border: #DDDDDD;
+    --shs-colour-border-soft: #D8E3E1;
+    --shs-colour-border-light: #E2E2E2;
+
+    /* -----------------------------------------------------
+       Dark surfaces
+       ----------------------------------------------------- */
+
+    --shs-colour-dark-surface: #192321;
+    --shs-colour-dark-brand: #073B3A;
+
+    --shs-colour-dark-border-subtle: rgba(255, 255, 255, 0.08);
+    --shs-colour-dark-hover-subtle: rgba(255, 255, 255, 0.04);
+
+    /* -----------------------------------------------------
+       Disabled states
+       ----------------------------------------------------- */
+
+    --shs-colour-disabled-bg: #F8FBFB;
+    --shs-colour-disabled-text: #A7B0B0;
+    --shs-colour-disabled-text-hover: #B0B7B7;
+
+    /* -----------------------------------------------------
+       Layout
+       ----------------------------------------------------- */
+
+    --shs-container-content: 1200px;
+    --shs-container-wide: 1440px;
+
+    --shs-page-padding-desktop: 32px;
+    --shs-page-padding-tablet: 24px;
+    --shs-page-padding-mobile: 16px;
+
+    /* -----------------------------------------------------
+       Radius
+       ----------------------------------------------------- */
+
+    --shs-radius-sm: 6px;
+    --shs-radius-md: 8px;
+    --shs-radius-lg: 10px;
+    --shs-radius-xl: 18px;
+    --shs-radius-pill: 999px;
+
+    /* -----------------------------------------------------
+       Shadows
+       ----------------------------------------------------- */
+
+    --shs-shadow-card: 0 2px 10px rgba(34, 39, 39, 0.04);
+    --shs-shadow-card-hover: 0 10px 24px rgba(34, 39, 39, 0.10);
+    --shs-shadow-sidebar: 0 8px 24px rgba(34, 39, 39, 0.06);
+
+    /* -----------------------------------------------------
+       Transitions
+       ----------------------------------------------------- */
+
+    --shs-transition-fast: 0.15s ease;
+    --shs-transition-standard: 0.2s ease;
+}
