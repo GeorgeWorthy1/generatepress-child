@@ -12,16 +12,16 @@ global $wp_query;
 
 $archive_count = isset( $wp_query->found_posts ) ? (int) $wp_query->found_posts : 0;
 
-$blog_page_id   = (int) get_option( 'page_for_posts' );
-$all_guides_url = $blog_page_id ? get_permalink( $blog_page_id ) : home_url( '/guides/' );
+$guides_category = function_exists( 'shs_get_guides_category' ) ? shs_get_guides_category() : null;
+$all_guides_url  = $guides_category ? get_category_link( $guides_category ) : home_url( '/guides/' );
+$is_guides_root  = $guides_category && is_category( (int) $guides_category->term_id );
 
 $queried_object = get_queried_object();
 
-$current_tag_id      = is_tag() && isset( $queried_object->term_id ) ? (int) $queried_object->term_id : 0;
-$current_category_id = is_category() && isset( $queried_object->term_id ) ? (int) $queried_object->term_id : 0;
+$current_tag_id = is_tag() && isset( $queried_object->term_id ) ? (int) $queried_object->term_id : 0;
 
-$active_guide_topic  = get_query_var( 'guide_topic' );
-$active_guide_search = get_query_var( 'guide_search' );
+$active_guide_topic  = sanitize_title( (string) get_query_var( 'guide_topic' ) );
+$active_guide_search = sanitize_text_field( (string) get_query_var( 'guide_search' ) );
 
 $current_archive_url = remove_query_arg(
 	array( 'guide_topic', 'guide_search', 'paged' ),
@@ -29,8 +29,7 @@ $current_archive_url = remove_query_arg(
 );
 
 /**
- * Top filter topics.
- * These are client-side filters for the currently loaded archive page.
+ * Topic links filter the current archive on the server.
  */
 $topic_tags = get_tags(
 	array(
@@ -62,13 +61,11 @@ $popular_tags = get_tags(
 
 		<div class="shs-blog-archive-container">
 
-			
-
 			<nav class="shs-blog-topic-nav" aria-label="Filter guides by topic">
 
 				<a
-					class="shs-blog-topic-nav__link <?php echo empty( $active_guide_topic ) ? 'is-active' : ''; ?>"
-					href="<?php echo esc_url( $current_archive_url ); ?>"
+					class="shs-blog-topic-nav__link <?php echo empty( $active_guide_topic ) && $is_guides_root ? 'is-active' : ''; ?>"
+					href="<?php echo esc_url( $all_guides_url ); ?>"
 				>
 					All guides
 				</a>
@@ -112,7 +109,7 @@ $popular_tags = get_tags(
 
 					<div class="shs-blog-archive-toolbar">
 
-						<p class="shs-blog-archive-count" data-guide-count>
+						<p class="shs-blog-archive-count">
 							<?php
 							printf(
 								esc_html( _n( '%s guide found', '%s guides found', $archive_count, 'generatepress-child' ) ),
@@ -154,32 +151,14 @@ $popular_tags = get_tags(
 						</form>
 
 					</div>
-					
-					
-
 					<?php if ( have_posts() ) : ?>
 
-						<div class="shs-blog-archive-grid" data-guide-grid>
+						<div class="shs-blog-archive-grid">
 
 							<?php while ( have_posts() ) : ?>
-								<?php
-								the_post();
+								<?php the_post(); ?>
 
-								$post_tags      = get_the_tags();
-								$post_tag_slugs = array();
-
-								if ( ! empty( $post_tags ) && ! is_wp_error( $post_tags ) ) {
-									foreach ( $post_tags as $post_tag ) {
-										$post_tag_slugs[] = $post_tag->slug;
-									}
-								}
-								?>
-
-								<div
-									class="shs-blog-card-filter-item"
-									data-guide-card
-									data-guide-tags="<?php echo esc_attr( implode( ' ', $post_tag_slugs ) ); ?>"
-								>
+								<div class="shs-blog-card-filter-item">
 									<?php get_template_part( 'template-parts/shs-blog-card' ); ?>
 								</div>
 
@@ -187,17 +166,7 @@ $popular_tags = get_tags(
 
 						</div>
 
-						<div class="shs-blog-archive-empty shs-blog-archive-empty--filtered" data-guide-empty hidden>
-
-							<h2>No guides found</h2>
-
-							<p>Try filtering for another term, selecting another topic, or viewing all guides.</p>
-
-						</div>
-
-						<div data-guide-pagination>
-							<?php get_template_part( 'template-parts/shs-archive-pagination' ); ?>
-						</div>
+						<?php get_template_part( 'template-parts/shs-archive-pagination' ); ?>
 
 					<?php else : ?>
 

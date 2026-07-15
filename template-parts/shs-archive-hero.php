@@ -45,11 +45,14 @@ if ( empty( $title ) ) {
 	$title = get_the_archive_title();
 }
 
-$banner_url = 'https://exp.smarthomeshopuk.com/wp-content/uploads/2026/04/ChatGPT-Image-Apr-28-2026-03_54_20-PM-1024x546.png';
+$banner_url = apply_filters(
+	'shs_archive_banner_url',
+	'https://exp.smarthomeshopuk.com/wp-content/uploads/2026/04/ChatGPT-Image-Apr-28-2026-03_54_20-PM-1024x546.png'
+);
 ?>
 
 <div class="gb-element-1b80f07f shs-page-hero shs-product-archive-hero-wrap">
-	<div class="wp-block-cover shs-page-hero-cover shs-product-archive-hero-cover" style="min-height:280px;aspect-ratio:unset;">
+	<div class="wp-block-cover shs-page-hero-cover shs-product-archive-hero-cover">
 
 		<img
 			class="wp-block-cover__image-background"

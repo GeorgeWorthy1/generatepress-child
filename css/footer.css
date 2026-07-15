@@ -26,7 +26,7 @@
     .site-footer .footer-widget-3 {
         margin-bottom: 18px !important;
         padding-bottom: 12px;
-        border-bottom: 1px solid var(--shs-color-dark-border);
+        border-bottom: 1px solid var(--shs-colour-dark-border-subtle);
     }
 	
 	    /* Remove Max Mega Menu's 6px inset from footer menu titles */
@@ -34,5 +34,3 @@
         padding-left: 0 !important;
     }
 }
-
-

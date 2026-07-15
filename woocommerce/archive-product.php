@@ -5,6 +5,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$has_product_filters = shortcode_exists( 'fe_widget' );
+
 get_header();
 ?>
 
@@ -19,31 +21,39 @@ get_header();
 
 			<?php woocommerce_output_all_notices(); ?>
 
-			<div class="shs-product-archive-topbar">
+			<?php if ( $has_product_filters ) : ?>
+				<div class="shs-product-archive-topbar">
 
-				<div class="shs-product-archive-mobile-filter-button">
-					<?php echo do_shortcode( '[fe_open_button]' ); ?>
+					<?php if ( shortcode_exists( 'fe_open_button' ) ) : ?>
+						<div class="shs-product-archive-mobile-filter-button">
+							<?php echo do_shortcode( '[fe_open_button]' ); ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( shortcode_exists( 'fe_chips' ) ) : ?>
+						<div class="shs-product-archive-chips">
+							<?php echo do_shortcode( '[fe_chips]' ); ?>
+						</div>
+					<?php endif; ?>
+
 				</div>
+			<?php endif; ?>
 
-				<div class="shs-product-archive-chips">
-					<?php echo do_shortcode( '[fe_chips]' ); ?>
-				</div>
+			<div class="shs-product-archive-layout<?php echo $has_product_filters ? '' : ' shs-product-archive-layout--no-filters'; ?>">
 
-			</div>
+				<?php if ( $has_product_filters ) : ?>
+					<aside class="shs-product-archive-sidebar" aria-label="Product filters">
 
-			<div class="shs-product-archive-layout">
+						<div class="shs-product-archive-sidebar__inner">
 
-				<aside class="shs-product-archive-sidebar" aria-label="Product filters">
+							<h2 class="shs-product-archive-sidebar__title">Filter products</h2>
 
-					<div class="shs-product-archive-sidebar__inner">
+							<?php echo do_shortcode( '[fe_widget]' ); ?>
 
-						<h2 class="shs-product-archive-sidebar__title">Filter products</h2>
+						</div>
 
-						<?php echo do_shortcode( '[fe_widget]' ); ?>
-
-					</div>
-
-				</aside>
+					</aside>
+				<?php endif; ?>
 
 				<section
 					id="shs-product-results"

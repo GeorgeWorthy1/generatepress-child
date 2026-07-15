@@ -46,6 +46,7 @@
 
     width: 100%;
     min-height: 280px;
+    aspect-ratio: unset;
 
     overflow: hidden;
     text-align: center;

@@ -68,6 +68,10 @@
     box-sizing: border-box;
 }
 
+.woocommerce.archive .shs-product-archive-layout--no-filters {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .woocommerce.archive .shs-product-archive-sidebar {
     width: 280px;
     min-width: 0;

@@ -2,8 +2,7 @@
 /**
  * SmartHomeShopUK custom single product template.
  *
- * Location:
- * /wp-content/themes/YOUR-CHILD-THEME/woocommerce/content-single-product.php
+ * Location: /wp-content/themes/generatepress-child/woocommerce/content-single-product.php
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -15,157 +14,6 @@ if ( ! $product || ! is_a( $product, 'WC_Product' ) ) {
 }
 
 $product_id = $product->get_id();
-
-/* =========================================================
-   Helpers
-   ========================================================= */
-
-if ( ! function_exists( 'shs_get_acf_field' ) ) {
-	function shs_get_acf_field( $field_name, $post_id ) {
-		if ( function_exists( 'get_field' ) ) {
-			return get_field( $field_name, $post_id );
-		}
-
-		return get_post_meta( $post_id, $field_name, true );
-	}
-}
-
-if ( ! function_exists( 'shs_render_textarea_list' ) ) {
-	function shs_render_textarea_list( $content, $class = 'shs-product-list' ) {
-		if ( empty( $content ) ) {
-			return;
-		}
-
-		$lines = preg_split( '/\r\n|\r|\n/', trim( wp_strip_all_tags( $content ) ) );
-		$lines = array_filter( array_map( 'trim', $lines ) );
-
-		if ( empty( $lines ) ) {
-			return;
-		}
-
-		echo '<ul class="' . esc_attr( $class ) . '">';
-
-		foreach ( $lines as $line ) {
-			echo '<li>' . esc_html( $line ) . '</li>';
-		}
-
-		echo '</ul>';
-	}
-}
-
-if ( ! function_exists( 'shs_render_spec_table' ) ) {
-	function shs_render_spec_table( $content ) {
-		if ( empty( $content ) ) {
-			return;
-		}
-
-		$lines = preg_split( '/\r\n|\r|\n/', trim( wp_strip_all_tags( $content ) ) );
-		$lines = array_filter( array_map( 'trim', $lines ) );
-
-		if ( empty( $lines ) ) {
-			return;
-		}
-
-		echo '<div class="shs-spec-table">';
-
-		foreach ( $lines as $line ) {
-			if ( strpos( $line, ':' ) !== false ) {
-				$parts = explode( ':', $line, 2 );
-
-				echo '<div class="shs-spec-row">';
-				echo '<div class="shs-spec-label">' . esc_html( trim( $parts[0] ) ) . '</div>';
-				echo '<div class="shs-spec-value">' . esc_html( trim( $parts[1] ) ) . '</div>';
-				echo '</div>';
-			} else {
-				echo '<div class="shs-spec-row">';
-				echo '<div class="shs-spec-value shs-spec-value-full">' . esc_html( $line ) . '</div>';
-				echo '</div>';
-			}
-		}
-
-		echo '</div>';
-	}
-}
-
-if ( ! function_exists( 'shs_render_product_information_item' ) ) {
-	/**
-	 * Renders a native product-information accordion item.
-	 *
-	 * No JavaScript is required. The browser handles opening,
-	 * closing and keyboard interaction through <details>/<summary>.
-	 */
-	function shs_render_product_information_item( $title, $class_name, $content_callback ) {
-		if ( ! is_callable( $content_callback ) ) {
-			return;
-		}
-
-		echo '<details class="shs-product-information__item ' . esc_attr( $class_name ) . '">';
-
-		echo '<summary class="shs-product-information__summary">';
-		echo '<span class="shs-product-information__title">' . esc_html( $title ) . '</span>';
-		echo '<span class="shs-product-information__icon" aria-hidden="true"></span>';
-		echo '</summary>';
-
-		echo '<div class="shs-product-information__content">';
-		call_user_func( $content_callback );
-		echo '</div>';
-
-		echo '</details>';
-	}
-}
-
-if ( ! function_exists( 'shs_render_sidebar_upsells' ) ) {
-	function shs_render_sidebar_upsells( $product, $limit = 3 ) {
-		if ( ! $product || ! is_a( $product, 'WC_Product' ) ) {
-			return;
-		}
-
-		$upsell_ids = array_slice( $product->get_upsell_ids(), 0, $limit );
-		$upsells    = array();
-
-		foreach ( $upsell_ids as $upsell_id ) {
-			$upsell_product = wc_get_product( $upsell_id );
-
-			if ( ! $upsell_product || ! $upsell_product->is_visible() ) {
-				continue;
-			}
-
-			$upsells[] = array(
-				'id'      => $upsell_id,
-				'product' => $upsell_product,
-			);
-		}
-
-		if ( empty( $upsells ) ) {
-			return;
-		}
-
-		echo '<div class="shs-sidebar-card shs-sidebar-upsells-card">';
-		echo '<h2>Recommended upgrades</h2>';
-		echo '<div class="shs-sidebar-upsells">';
-
-		foreach ( $upsells as $upsell ) {
-			$upsell_id      = $upsell['id'];
-			$upsell_product = $upsell['product'];
-
-			echo '<a class="shs-sidebar-upsell-product" href="' . esc_url( get_permalink( $upsell_id ) ) . '">';
-
-			echo '<span class="shs-sidebar-upsell-image">';
-			echo get_the_post_thumbnail( $upsell_id, 'woocommerce_thumbnail' );
-			echo '</span>';
-
-			echo '<span class="shs-sidebar-upsell-content">';
-			echo '<span class="shs-sidebar-upsell-title">' . esc_html( get_the_title( $upsell_id ) ) . '</span>';
-			echo '<span class="shs-sidebar-upsell-price">' . wp_kses_post( $upsell_product->get_price_html() ) . '</span>';
-			echo '</span>';
-
-			echo '</a>';
-		}
-
-		echo '</div>';
-		echo '</div>';
-	}
-}
 
 /* =========================================================
    Product fields
@@ -353,7 +201,7 @@ $has_product_information =
 					coordinator, and what you want to achieve.
 				</p>
 
-				<a class="shs-button shs-button-primary" href="/request-help/">
+				<a class="shs-button shs-button-primary" href="<?php echo esc_url( home_url( '/request-help/' ) ); ?>">
 					Request help
 				</a>
 
