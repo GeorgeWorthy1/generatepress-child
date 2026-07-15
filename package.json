@@ -1,0 +1,12 @@
+{
+  "name": "generatepress-child",
+  "private": true,
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\""
+  },
+  "devDependencies": {
+    "stylelint": "17.14.0",
+    "stylelint-config-recommended": "18.0.0"
+  }
+}
+
