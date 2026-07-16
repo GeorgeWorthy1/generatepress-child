@@ -46,6 +46,10 @@
     --shs-colour-dark-surface: #192321;
     --shs-colour-dark-brand: #073B3A;
 
+    --shs-colour-header-surface: var(--shs-colour-heading);
+    --shs-colour-navigation-surface: #151919;
+    --shs-colour-navigation-hover: #202526;
+
     --shs-colour-dark-border-subtle: rgba(255, 255, 255, 0.08);
     --shs-colour-dark-hover-subtle: rgba(255, 255, 255, 0.04);
 

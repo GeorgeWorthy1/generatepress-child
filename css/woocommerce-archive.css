@@ -520,6 +520,7 @@
 
     .woocommerce.archive .shs-product-archive-sidebar {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .woocommerce.archive .shs-product-archive-sidebar__inner {
@@ -527,9 +528,14 @@
     }
 
     .woocommerce.archive .shs-product-archive-toolbar {
-        display: block;
-
+        display: grid;
+        gap: 8px;
         margin-bottom: 24px;
+    }
+
+    .woocommerce.archive .shs-product-archive-count,
+    .woocommerce.archive .shs-product-archive-sort {
+        margin: 0;
     }
 
     .woocommerce.archive .shs-product-archive-sort select,

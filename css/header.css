@@ -1,168 +1,33 @@
 /* =========================================================
    Header Responsive Control
    SmartHomeShopUK
-   Clean ecommerce header
+
+   This file intentionally overrides GeneratePress,
+   Max Mega Menu and WooCommerce Blocks where required.
    ========================================================= */
 
 
 /* ---------------------------------------------------------
-   1. Header title visibility
+   1. Shared header styles
    --------------------------------------------------------- */
 
-@media (min-width: 1280px) {
-    .site-header .site-branding {
-        display: block !important;
-    }
+.site-header,
+.site-header .inside-header,
+.site-header .header-widget {
+    background-color: var(--shs-colour-header-surface) !important;
 }
 
-@media (max-width: 1279px) {
-    .site-header .site-branding {
-        display: none !important;
-    }
+.site-header .main-title a,
+.site-header .main-title a:hover,
+.site-header .main-title a:focus {
+    color: var(--shs-colour-white) !important;
 }
-
-
-/* ---------------------------------------------------------
-   2. Logo/title cleanup
-   --------------------------------------------------------- */
 
 .site-header .site-logo,
 .site-header .site-branding,
 .site-header .main-title {
     margin: 0 !important;
 }
-
-
-/* ---------------------------------------------------------
-   3. Menu visibility
-   Desktop nav row above 1024px
-   Header accordion menu at 1024px and below
-   --------------------------------------------------------- */
-
-@media (min-width: 1025px) {
-    nav#site-navigation {
-        display: block !important;
-    }
-
-    .header-widget #mega-menu-wrap-primary {
-        display: none !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    nav#site-navigation {
-        display: none !important;
-    }
-
-    .header-widget #mega-menu-wrap-primary {
-        display: block !important;
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        min-height: 44px !important;
-        margin: 0 !important;
-        overflow: visible !important;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   4. Desktop header layout above 1024px
-   Logo/title or logo | full-width search | cart | account
-   --------------------------------------------------------- */
-
-@media (min-width: 1025px) {
-    .site-header .inside-header {
-        gap: 24px !important;
-    }
-
-    .site-header .site-branding-container {
-        gap: 12px !important;
-    }
-
-    .site-header .header-widget {
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        max-width: none !important;
-    }
-
-    .site-header .header-widget .wp-block-group,
-    .site-header .shs-header-utilities {
-        gap: 18px !important;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   5. Header layout at 1024px and below
-   Menu | logo | search | cart | account
-   --------------------------------------------------------- */
-
-@media (max-width: 1024px) {
-    .site-header .inside-header {
-        display: grid !important;
-        grid-template-columns: auto auto minmax(160px, 1fr) auto auto;
-        grid-template-areas: "menu logo search cart account";
-        align-items: center !important;
-        gap: 12px !important;
-        width: 100%;
-    }
-
-    .site-header .header-widget,
-    .site-header .header-widget > .widget,
-    .site-header .header-widget .wp-block-group,
-    .site-header .shs-header-utilities {
-        display: contents !important;
-    }
-
-    .site-header .site-branding-container {
-        grid-area: logo !important;
-    }
-
-    .site-header .dgwt-wcas-search-wrapp {
-        grid-area: search !important;
-    }
-
-    .site-header .wp-block-woocommerce-mini-cart {
-        grid-area: cart !important;
-        justify-self: end !important;
-    }
-
-    .site-header .wp-block-woocommerce-customer-account {
-        grid-area: account !important;
-        justify-self: end !important;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   6. Very small mobile header below 600px
-   Menu | logo | cart
-   Search full-width underneath
-   --------------------------------------------------------- */
-
-@media (max-width: 600px) {
-    .site-header .inside-header {
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas:
-            "menu logo cart"
-            "search search search";
-        gap: 10px 12px !important;
-    }
-
-    .site-header .site-branding-container {
-        justify-self: center !important;
-    }
-
-    .site-header .wp-block-woocommerce-customer-account {
-        display: none !important;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   7. Header utility icons and mini-cart
-   --------------------------------------------------------- */
 
 .shs-header-utilities .wc-block-mini-cart__icon,
 .shs-header-utilities .wc-block-customer-account__account-icon {
@@ -195,37 +60,86 @@
 
 
 /* ---------------------------------------------------------
-   8. Desktop navigation row styling
-   Applies above 1024px only
+   2. Site title visibility
+   The compact header keeps the logo but hides the text title.
+   --------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+    .site-header .site-branding {
+        display: block !important;
+    }
+}
+
+@media (max-width: 1279px) {
+    .site-header .site-branding {
+        display: none !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   3. Desktop header and navigation
    --------------------------------------------------------- */
 
 @media (min-width: 1025px) {
+    /* Use the GeneratePress navigation row on desktop. */
     nav#site-navigation {
-        background: var(--shs-colour-dark-surface) !important;
+        display: block !important;
+        background: var(--shs-colour-navigation-surface) !important;
         border-top: 1px solid var(--shs-colour-dark-border-subtle);
         border-bottom: 1px solid var(--shs-colour-dark-border-subtle);
+    }
+
+    /* The header-widget copy is only used on tablet/mobile. */
+    .header-widget #mega-menu-wrap-primary {
+        display: none !important;
+    }
+
+    .site-header .inside-header {
+        gap: 24px !important;
+    }
+
+    .site-header .site-branding-container {
+        gap: 12px !important;
+    }
+
+    .site-header .header-widget {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .site-header .header-widget .wp-block-group,
+    .site-header .shs-header-utilities {
+        gap: 18px !important;
     }
 
     nav#site-navigation .inside-navigation {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-
-        max-width: var(--shs-container-content);
+        width: 100%;
+        max-width: none;
         min-height: 46px;
-        margin: 0 auto;
-        padding: 0 24px;
+        margin: 0;
+        padding: 0;
     }
 
     nav#site-navigation #mega-menu-wrap-primary {
-        width: auto !important;
+        width: 100% !important;
+        background: transparent !important;
     }
 
     nav#site-navigation #mega-menu-primary {
         display: flex !important;
+        position: relative !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 4px;
+        width: 100% !important;
+        max-width: var(--shs-container-content) !important;
+        margin: 0 auto !important;
+        background: transparent !important;
     }
 
     nav#site-navigation #mega-menu-primary > li {
@@ -234,16 +148,13 @@
 
     nav#site-navigation #mega-menu-primary > li > a.mega-menu-link {
         height: 46px !important;
-        line-height: 46px !important;
         padding: 0 14px !important;
-
         background: transparent !important;
         color: var(--shs-colour-white) !important;
-
         font-size: 14px !important;
         font-weight: 500 !important;
+        line-height: 46px !important;
         text-decoration: none !important;
-
         transition:
             color var(--shs-transition-fast),
             background-color var(--shs-transition-fast);
@@ -253,11 +164,390 @@
     nav#site-navigation #mega-menu-primary > li.mega-toggle-on > a.mega-menu-link,
     nav#site-navigation #mega-menu-primary > li.current-menu-item > a.mega-menu-link,
     nav#site-navigation #mega-menu-primary > li.current-menu-ancestor > a.mega-menu-link {
-        background: var(--shs-colour-dark-hover-subtle) !important;
+        background: var(--shs-colour-navigation-hover) !important;
         color: var(--shs-colour-primary) !important;
     }
 
     nav#site-navigation #mega-menu-primary > li > a .mega-indicator {
         margin-left: 5px !important;
+    }
+
+    /* Shared desktop dropdown link reset. */
+    nav#site-navigation #mega-menu-primary a.mega-menu-link,
+    nav#site-navigation #mega-menu-primary a.mega-menu-link:hover,
+    nav#site-navigation #mega-menu-primary a.mega-menu-link:focus {
+        text-decoration: none !important;
+    }
+
+    /* Shop mega menu. */
+    nav#site-navigation #mega-menu-primary > li.mega-menu-megamenu {
+        position: static !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {
+        box-sizing: border-box !important;
+        top: 100% !important;
+        left: 50% !important;
+        width: calc(100vw - 48px) !important;
+        max-width: var(--shs-container-wide) !important;
+        min-height: 0 !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        transform: translateX(-50%) !important;
+        background: var(--shs-colour-surface) !important;
+        border: 1px solid var(--shs-colour-border-light) !important;
+        border-top: 0 !important;
+        border-radius: 0 0 var(--shs-radius-lg) var(--shs-radius-lg) !important;
+        box-shadow: var(--shs-shadow-sidebar) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: var(--shs-container-wide) !important;
+        margin: 0 auto !important;
+        padding: 12px 26px 32px !important;
+    }
+
+    nav#site-navigation #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+        color: var(--shs-colour-heading) !important;
+        transition: color var(--shs-transition-fast) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover,
+    nav#site-navigation #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {
+        color: var(--shs-colour-primary) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+        color: var(--shs-colour-text) !important;
+        transition: color var(--shs-transition-fast) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover,
+    nav#site-navigation #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {
+        color: var(--shs-colour-primary-dark) !important;
+    }
+
+    /* Keep accordion categories expanded on desktop. */
+    nav#site-navigation #mega-menu-primary li.mega-collapse-children > ul.mega-sub-menu {
+        display: block !important;
+        height: auto !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    nav#site-navigation #mega-menu-primary li.mega-collapse-children > a.mega-menu-link .mega-indicator {
+        display: none !important;
+    }
+
+    /* Guides and Services flyouts. */
+    nav#site-navigation #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu {
+        width: 380px !important;
+        padding: 8px 0 !important;
+        background: var(--shs-colour-surface) !important;
+        border: 1px solid var(--shs-colour-border-light) !important;
+        border-radius: 0 0 var(--shs-radius-md) var(--shs-radius-md) !important;
+        box-shadow: var(--shs-shadow-sidebar) !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu a.mega-menu-link {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 9px 12px !important;
+        background: transparent !important;
+        color: var(--shs-colour-heading) !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+    }
+
+    nav#site-navigation #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu a.mega-menu-link:hover,
+    nav#site-navigation #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu a.mega-menu-link:focus {
+        background: var(--shs-colour-primary-soft) !important;
+        color: var(--shs-colour-primary-dark) !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   4. Tablet and mobile header/menu
+   Max Mega Menu mobile type: Show/Hide
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .site-header {
+        --shs-mobile-menu-top: 88px;
+    }
+
+    nav#site-navigation {
+        display: none !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary {
+        display: block !important;
+        width: 44px !important;
+        height: 44px !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Header grid: menu | logo | search | cart | account. */
+    .site-header .inside-header {
+        display: grid !important;
+        grid-template-columns: auto auto minmax(160px, 1fr) auto auto;
+        grid-template-areas: "menu logo search cart account";
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100%;
+        padding-right: var(--shs-page-padding-tablet) !important;
+        padding-left: var(--shs-page-padding-tablet) !important;
+    }
+
+    /* Flatten the widget wrappers so their children can occupy grid areas. */
+    .site-header .header-widget,
+    .site-header .header-widget > .widget,
+    .site-header .header-widget .wp-block-group,
+    .site-header .shs-header-utilities {
+        display: contents !important;
+    }
+
+    .site-header .site-branding-container {
+        grid-area: logo !important;
+    }
+
+    .site-header .dgwt-wcas-search-wrapp {
+        grid-area: search !important;
+    }
+
+    .site-header .wp-block-woocommerce-mini-cart {
+        grid-area: cart !important;
+        justify-self: end !important;
+    }
+
+    .site-header .wp-block-woocommerce-customer-account {
+        grid-area: account !important;
+        justify-self: end !important;
+    }
+
+    /* Position the Show/Hide menu below the real header. */
+    .header-widget #mega-menu-wrap-primary .mega-menu-toggle + #mega-menu-primary {
+        box-sizing: border-box !important;
+        position: fixed !important;
+        top: var(--shs-mobile-menu-top) !important;
+        right: 0 !important;
+        bottom: auto !important;
+        left: 0 !important;
+        z-index: 999999 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - var(--shs-mobile-menu-top)) !important;
+        height: calc(100dvh - var(--shs-mobile-menu-top)) !important;
+        max-height: calc(100vh - var(--shs-mobile-menu-top)) !important;
+        max-height: calc(100dvh - var(--shs-mobile-menu-top)) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+        -webkit-overflow-scrolling: touch;
+        background: var(--shs-colour-header-surface) !important;
+        transform: none !important;
+    }
+
+    /* Lock the document while the mobile menu is open. */
+    html:has(#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open),
+    body:has(#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open) {
+        overflow: hidden !important;
+        overscroll-behavior: none !important;
+    }
+
+    /* Keep the real header visible while the menu is open. */
+    body:has(#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open) .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        z-index: 1000000 !important;
+        width: 100% !important;
+    }
+
+    /* Main mobile menu links. */
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li > a.mega-menu-link {
+        min-height: 48px !important;
+        padding: 0 18px !important;
+        background: var(--shs-colour-header-surface) !important;
+        border-bottom: 1px solid var(--shs-colour-dark-border-subtle) !important;
+        color: var(--shs-colour-white) !important;
+        font-weight: 600 !important;
+        line-height: 48px !important;
+        text-decoration: none !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li.mega-toggle-on > a.mega-menu-link,
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li > a.mega-menu-link:hover,
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li > a.mega-menu-link:focus {
+        background: var(--shs-colour-navigation-hover) !important;
+        color: var(--shs-colour-primary) !important;
+    }
+
+    /* Shop mega menu: one connected white section. */
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: var(--shs-colour-surface) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Remove Max Mega Menu's mobile column spacing. */
+    .header-widget #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row,
+    .header-widget #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu,
+    .header-widget #mega-menu-primary li.mega-menu-column,
+    .header-widget #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu,
+    .header-widget #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {
+        box-sizing: border-box !important;
+        display: block !important;
+        float: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Shop category headings. */
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+        min-height: 46px !important;
+        padding: 13px 18px !important;
+        background: var(--shs-colour-surface-soft) !important;
+        border-bottom: 1px solid var(--shs-colour-border-light) !important;
+        color: var(--shs-colour-primary-dark) !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        text-decoration: none !important;
+    }
+
+    /* Product-category links. */
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+        min-height: 0 !important;
+        padding: 8px 24px !important;
+        background: var(--shs-colour-surface) !important;
+        color: var(--shs-colour-text) !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+        text-decoration: none !important;
+        text-transform: none !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover,
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column ul.mega-sub-menu ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {
+        color: var(--shs-colour-primary-dark) !important;
+    }
+
+    /* Guides and Services mobile flyouts. */
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: var(--shs-colour-surface) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu > li.mega-menu-item {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .header-widget #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 10px 18px 11px !important;
+        background: var(--shs-colour-surface) !important;
+        border-bottom: 1px solid var(--shs-colour-border-light) !important;
+        color: var(--shs-colour-primary-dark) !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        text-decoration: none !important;
+        text-transform: none !important;
+        white-space: normal !important;
+    }
+
+    .header-widget #mega-menu-primary li.mega-menu-flyout .mega-menu-description {
+        display: block !important;
+        margin-top: 3px !important;
+        color: var(--shs-colour-text) !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        font-style: italic !important;
+        line-height: 1.4 !important;
+    }
+
+    .header-widget #mega-menu-primary li.mega-menu-flyout > ul.mega-sub-menu > li:last-child > a.mega-menu-link {
+        border-bottom: 0 !important;
+    }
+
+    .header-widget #mega-menu-primary li.mega-menu-flyout > ul.mega-sub-menu > li > a.mega-menu-link:hover,
+    .header-widget #mega-menu-primary li.mega-menu-flyout > ul.mega-sub-menu > li > a.mega-menu-link:focus {
+        background: var(--shs-colour-primary-soft) !important;
+        color: var(--shs-colour-primary-dark) !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   5. Tablet-only spacing
+   --------------------------------------------------------- */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .header-widget #mega-menu-wrap-primary {
+        margin-right: 6px !important;
+    }
+
+    .site-header .site-branding-container {
+        margin-right: 8px !important;
+    }
+
+    .site-header .site-logo img {
+        display: block !important;
+        width: 34px !important;
+        height: auto !important;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   6. Small mobile header
+   Menu | logo | cart, then full-width search
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .site-header {
+        --shs-mobile-menu-top: 142px;
+    }
+
+    .site-header .inside-header {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+            "menu logo cart"
+            "search search search";
+        gap: 10px 12px !important;
+        padding-right: var(--shs-page-padding-mobile) !important;
+        padding-left: var(--shs-page-padding-mobile) !important;
+    }
+
+    .site-header .site-branding-container {
+        justify-self: center !important;
+    }
+
+    .site-header .wp-block-woocommerce-customer-account {
+        display: none !important;
     }
 }
