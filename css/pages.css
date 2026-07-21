@@ -58,16 +58,36 @@
     margin-bottom: 0;
 }
 
-.shs-contact-route a {
+.shs-contact-route-link a,
+.shs-contact-route-link a:visited,
+.shs-contact-route-link a:hover,
+.shs-contact-route-link a:focus,
+.shs-contact-route-link a:active {
     color: var(--shs-colour-primary-dark);
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-.shs-contact-route a:hover {
+/* Stretch the visible action link across the entire card. */
+.shs-contact-route-link a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.shs-contact-route-link a:hover {
     color: var(--shs-colour-primary);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+}
+
+.shs-contact-route-link a:focus-visible {
+    outline: none;
+}
+
+.shs-contact-route-link a:focus-visible::after {
+    outline: 3px solid var(--shs-colour-primary);
+    outline-offset: -3px;
 }
 
 @media (max-width: 767px) {
