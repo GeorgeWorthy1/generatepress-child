@@ -334,12 +334,7 @@
         background var(--shs-transition-standard);
 }
 
-.woocommerce.archive .shs-product-archive-results ul.products li.product:hover {
-    border-color: var(--shs-colour-primary-hover);
-    background: var(--shs-colour-primary-soft);
-    box-shadow: var(--shs-shadow-card-hover);
-    transform: translateY(-2px);
-}
+/* Product-card hover behaviour is centralised in components.css. */
 
 .woocommerce.archive ul.products li.product a.woocommerce-LoopProduct-link {
     display: flex;

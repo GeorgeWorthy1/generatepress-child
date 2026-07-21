@@ -1,4 +1,29 @@
 /* =========================================================
+   Interactive Card Behaviour
+   Shared by linked cards across the site
+   Add .shs-interactive-card only to cards that lead somewhere
+   ========================================================= */
+
+.shs-interactive-card {
+    transition:
+        border-color var(--shs-transition-standard),
+        background-color var(--shs-transition-standard),
+        box-shadow var(--shs-transition-standard),
+        transform var(--shs-transition-standard);
+}
+
+.shs-interactive-card:hover,
+.shs-content-card:hover,
+.shs-recent-product-card__link:hover,
+.woocommerce.archive .shs-product-archive-results ul.products li.product:hover {
+    border-color: var(--shs-colour-primary-hover);
+    background: var(--shs-colour-primary-soft);
+    box-shadow: var(--shs-shadow-card-hover);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
    Recent Guides Section
    Shared across archives, posts and products
    ========================================================= */
@@ -340,11 +365,6 @@
 }
 
 .shs-recent-product-card__link:hover {
-    border-color: var(--shs-colour-primary-hover);
-    background: var(--shs-colour-primary-soft);
-    box-shadow: var(--shs-shadow-card-hover);
-    transform: translateY(-2px);
-
     text-decoration: none;
 }
 
@@ -531,12 +551,7 @@ a.shs-content-card:active {
    Matches the original guide-card hover exactly
    --------------------------------------------------------- */
 
-.shs-content-card:hover {
-    border-color: var(--shs-colour-primary-hover);
-    background: var(--shs-colour-primary-soft);
-    box-shadow: var(--shs-shadow-card-hover);
-    transform: translateY(-2px);
-}
+/* Hover behaviour is provided by the shared interactive-card block. */
 
 
 /* ---------------------------------------------------------
