@@ -230,12 +230,12 @@
     }
 
     /* Keep accordion categories expanded on desktop. */
-    nav#site-navigation #mega-menu-primary li.mega-collapse-children > ul.mega-sub-menu {
+    nav#site-navigation #mega-menu-primary
+    > li.mega-menu-megamenu.mega-toggle-on
+    li.mega-collapse-children > ul.mega-sub-menu {
         display: block !important;
         height: auto !important;
         max-height: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
     }
 
     nav#site-navigation #mega-menu-primary li.mega-collapse-children > a.mega-menu-link .mega-indicator {
