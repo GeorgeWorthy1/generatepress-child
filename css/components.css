@@ -102,53 +102,66 @@
 
 .shs-archive-guide-card {
     min-width: 0;
+    height: 100%;
 }
 
 .shs-archive-guide-card__link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+
+    padding: 14px;
+
+    background: var(--shs-colour-surface-soft);
+    border: 1px solid var(--shs-colour-border-light);
+    border-radius: var(--shs-radius-xl);
+    box-shadow: var(--shs-shadow-card);
 
     color: inherit;
-    text-decoration: none;
+    text-decoration: none !important;
 
-    transition: transform var(--shs-transition-standard);
+    transition:
+        background-color var(--shs-transition-standard),
+        border-color var(--shs-transition-standard),
+        box-shadow var(--shs-transition-standard),
+        transform var(--shs-transition-standard);
 }
 
-.shs-archive-guide-card__link:hover {
-    transform: translateY(-2px);
-
-    text-decoration: none;
+.shs-archive-guide-card__link:visited {
+    color: inherit;
+    text-decoration: none !important;
 }
 
-.shs-archive-guide-card__link,
 .shs-archive-guide-card__link:hover,
-.shs-archive-guide-card__link:focus,
-.shs-archive-guide-card__link:visited,
-.shs-archive-guide-card__link * {
+.shs-archive-guide-card__link:focus {
+    background: var(--shs-colour-primary-soft);
+    border-color: var(--shs-colour-primary);
+    color: inherit;
+    text-decoration: none !important;
+    transform: translateY(-2px);
+}
+
+.shs-archive-guide-card__link:hover h3,
+.shs-archive-guide-card__link:focus h3,
+.shs-archive-guide-card__link:hover .shs-archive-guide-card__date,
+.shs-archive-guide-card__link:focus .shs-archive-guide-card__date {
     text-decoration: none !important;
 }
 
 .shs-archive-guide-card__image-wrap {
     overflow: hidden;
-
     width: 100%;
     aspect-ratio: 16 / 9;
-    margin-bottom: 14px;
+    margin: 0;
 
+    background: var(--shs-colour-surface-card);
     border: 1px solid var(--shs-colour-border-light);
-    border-radius: var(--shs-radius-xl);
-
-    background: var(--shs-colour-surface-soft);
-
-    transition: box-shadow var(--shs-transition-standard);
-}
-
-.shs-archive-guide-card__link:hover .shs-archive-guide-card__image-wrap {
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    border-radius: var(--shs-radius-lg);
 }
 
 .shs-archive-guide-card__image {
     display: block;
-
     width: 100%;
     height: 100%;
 
@@ -160,32 +173,42 @@
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(135deg, #eef4f3 0%, #f8fbfb 100%);
+    background: linear-gradient(
+        135deg,
+        var(--shs-colour-surface-soft),
+        var(--shs-colour-primary-soft)
+    );
+}
+
+.shs-archive-guide-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    padding: 16px 4px 4px;
 }
 
 .shs-archive-guide-card__content h3 {
-    margin: 0 0 8px;
+    margin: 0;
 
     color: var(--shs-colour-heading);
     font-size: 16px;
-    line-height: 1.35;
+    line-height: 1.4;
     font-weight: 700;
-
-    transition: color var(--shs-transition-standard);
+    text-decoration: none;
 }
 
 .shs-archive-guide-card__date {
-    color: var(--shs-colour-subtle);
-    font-size: 13px;
-    line-height: 1.4;
-    font-weight: 500;
+    margin-top: auto;
+    padding-top: 14px;
 
-    transition: color var(--shs-transition-standard);
-}
-
-.shs-archive-guide-card__link:hover h3,
-.shs-archive-guide-card__link:hover .shs-archive-guide-card__date {
     color: var(--shs-colour-primary-dark);
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 
@@ -193,7 +216,7 @@
    Recent Guides: mobile
    --------------------------------------------------------- */
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
     .shs-archive-guides {
         max-width: none;
@@ -237,10 +260,17 @@
         gap: 28px;
     }
 
-    .shs-archive-guide-card__image-wrap {
-        margin-bottom: 12px;
+    .shs-archive-guide-card__link {
+        padding: 12px;
+    }
 
+    .shs-archive-guide-card__image-wrap {
+        margin: 0;
         border-radius: var(--shs-radius-lg);
+    }
+
+    .shs-archive-guide-card__content {
+        padding: 14px 4px 4px;
     }
 
     .shs-archive-guide-card__content h3 {

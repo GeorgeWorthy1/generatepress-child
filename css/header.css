@@ -43,6 +43,43 @@
     box-shadow: none !important;
 }
 
+/* Static cart link used where WooCommerce disables the mini-cart drawer. */
+.shs-header-utilities .shs-static-mini-cart__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+
+    color: var(--shs-colour-white) !important;
+    text-decoration: none !important;
+}
+
+.shs-header-utilities .shs-static-mini-cart__link .wc-block-mini-cart__icon {
+    width: 26px;
+    height: 26px;
+
+    color: var(--shs-colour-white) !important;
+    fill: var(--shs-colour-white) !important;
+}
+
+.shs-header-utilities .shs-static-mini-cart__link .wc-block-mini-cart__icon path,
+.shs-header-utilities .shs-static-mini-cart__link .wc-block-mini-cart__icon circle {
+    fill: var(--shs-colour-white) !important;
+}
+
+.shs-header-utilities .shs-static-mini-cart__link:hover .wc-block-mini-cart__icon,
+.shs-header-utilities .shs-static-mini-cart__link:hover .wc-block-mini-cart__icon path,
+.shs-header-utilities .shs-static-mini-cart__link:hover .wc-block-mini-cart__icon circle,
+.shs-header-utilities .shs-static-mini-cart__link:focus .wc-block-mini-cart__icon,
+.shs-header-utilities .shs-static-mini-cart__link:focus .wc-block-mini-cart__icon path,
+.shs-header-utilities .shs-static-mini-cart__link:focus .wc-block-mini-cart__icon circle {
+    color: var(--shs-colour-primary) !important;
+    fill: var(--shs-colour-primary) !important;
+}
+
 .shs-header-utilities .wc-block-mini-cart__button:hover svg,
 .shs-header-utilities .wc-block-mini-cart__button:hover svg path,
 .shs-header-utilities .wc-block-customer-account__link:hover svg,

@@ -83,6 +83,18 @@
     box-shadow: var(--shs-shadow-card);
 }
 
+.single-product .shs-single-product .woocommerce-message {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Remove WooCommerce's default green success icon. */
+.single-product .shs-single-product .woocommerce-message::before {
+    display: none;
+    content: none;
+}
+
 .single-product .shs-single-product .woocommerce-error {
     background: #fff4f2;
     color: #9f2f27;
@@ -92,6 +104,50 @@
 .single-product .shs-single-product .woocommerce-info a,
 .single-product .shs-single-product .woocommerce-error a {
     font-weight: 700;
+}
+
+.single-product .shs-single-product .woocommerce-message a.button {
+    order: 2;
+    flex: 0 0 auto;
+    float: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    margin: 0 0 0 auto !important;
+    padding: 0 18px !important;
+
+    border: 1px solid var(--shs-colour-primary) !important;
+    border-radius: var(--shs-radius-sm) !important;
+
+    background: var(--shs-colour-primary) !important;
+    color: var(--shs-colour-white) !important;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none !important;
+}
+
+.single-product .shs-single-product .woocommerce-message a.button:hover {
+    border-color: var(--shs-colour-primary-dark) !important;
+    background: var(--shs-colour-primary-dark) !important;
+    color: var(--shs-colour-white) !important;
+}
+
+@media (max-width: 600px) {
+    .single-product .shs-single-product .woocommerce-message {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .single-product .shs-single-product .woocommerce-message a.button {
+        width: 100%;
+        margin: 0 !important;
+    }
 }
 
 
@@ -729,8 +785,10 @@
     opacity: 0;
 }
 
-.shs-product-information__content {
-    padding: 0 28px 24px;
+.shs-product-information__item[open] > .shs-product-information__content {
+    padding: 18px 28px 30px !important;
+
+    border-top: 1px solid var(--shs-colour-border);
 
     color: var(--shs-colour-text);
     font-size: 16px;
@@ -1387,8 +1445,8 @@
         padding: 16px 20px;
     }
 
-    .shs-product-information__content {
-        padding: 0 20px 20px;
+    .shs-product-information__item[open] > .shs-product-information__content {
+        padding: 16px 20px 24px !important;
     }
 
     .shs-product-information__title {
