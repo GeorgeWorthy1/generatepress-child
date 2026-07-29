@@ -201,7 +201,7 @@ $has_product_information =
 					coordinator, and what you want to achieve.
 				</p>
 
-				<a class="shs-button shs-button-primary" href="<?php echo esc_url( home_url( '/request-help/' ) ); ?>">
+				<a class="shs-button shs-button-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					Request help
 				</a>
 

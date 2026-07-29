@@ -5,6 +5,47 @@
    ========================================================= */
 
 
+/* ---------------------------------------------------------
+   Empty archive results
+   --------------------------------------------------------- */
+
+.woocommerce.archive .shs-product-archive-results:has(.woocommerce-info) {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+.woocommerce.archive .shs-product-archive-results .woocommerce-info {
+    position: relative;
+
+    margin: 0;
+    padding: 18px 20px 18px 52px;
+
+    border: 1px solid var(--shs-colour-primary) !important;
+    border-radius: var(--shs-radius-lg);
+
+    background: var(--shs-colour-primary-soft);
+    color: var(--shs-colour-heading);
+    box-shadow: var(--shs-shadow-card);
+    opacity: 1 !important;
+
+    font-size: 15px;
+    line-height: 1.55;
+
+    animation: none !important;
+    transition: none !important;
+}
+
+.woocommerce.archive .shs-product-archive-results .woocommerce-info::before {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+
+    color: var(--shs-colour-primary-dark);
+
+    transform: translateY(-50%);
+}
+
 
 
 /* ---------------------------------------------------------

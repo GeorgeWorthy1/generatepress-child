@@ -75,7 +75,7 @@
     margin: 0 0 24px;
     padding: 15px 18px;
 
-    border: 1px solid var(--shs-colour-border);
+    border: 1px solid var(--shs-colour-primary) !important;
     border-radius: var(--shs-radius-lg);
 
     background: var(--shs-colour-primary-soft);
