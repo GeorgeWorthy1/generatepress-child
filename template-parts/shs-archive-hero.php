@@ -47,7 +47,7 @@ if ( empty( $title ) ) {
 
 $banner_url = apply_filters(
 	'shs_archive_banner_url',
-	'https://exp.smarthomeshopuk.com/wp-content/uploads/2026/04/ChatGPT-Image-Apr-28-2026-03_54_20-PM-1024x546.png'
+	'https://smarthomeshopuk.com/wp-content/uploads/2026/04/ChatGPT-Image-Apr-28-2026-03_54_20-PM-1024x546.png'
 );
 ?>
 
